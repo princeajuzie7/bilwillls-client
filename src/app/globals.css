@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: transparent;
+
+  font-family: SF Pro Text, Helvetica Neue, sans-serif;
+}
+
+body{
+  background-color: #0B0C0F;
+}
+
+
+.custom-hero-bg {
+  /* background: linear-gradient(-270deg, #141414 0%, rgba(20, 20, 20, 0) 100%); */
+  background: red;
+}
+
+
+::-webkit-scrollbar {
+  margin-top: 2px;
+  width: 8px;
+  height: 8px;
+  z-index: 9999;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #ffff;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #817c7c9a;
+  border-radius: 4px;
+}
+ 
+::-webkit-scrollbar-thumb:hover {
+  background-color: #817c7c9a;
+  width: 4px;
+}
+
+.swiper-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.slider-next {
+    position: absolute;
+    z-index: 10;
+    left: 2.8125em;
+    bottom: 0;
+}
+
+ .slider-prev {
+    position: absolute;
+    z-index: 10;
+    left: 0;
+    bottom: 0;
+}
+
+.swiper-button {
+    width: 1.875rem;
+    align-items: center;
+    height: 1.875rem;
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+    text-align: center;
+    line-height: 1.875rem;
+    color: #ffff;
+    background: transparent;
+    border-radius: 50%;
+    border: .0625em solid #ffff;
+    z-index: 1;
+    transition: all .3s ease-in-out;
+    font-size: 1em;
+}
