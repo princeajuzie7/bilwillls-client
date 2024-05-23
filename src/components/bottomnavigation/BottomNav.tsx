@@ -2,6 +2,8 @@
 import React from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import debounce from "lodash/debounce";
+
 
 export function BottomNav() {
   const bottomItem = [
@@ -27,7 +29,7 @@ export function BottomNav() {
       ),
     },
     {
-      name: "New & Popular",
+      name: "New & Hot",
       icon: (
         <svg
           viewBox="0 0 20 20"
@@ -152,33 +154,37 @@ export function BottomNav() {
       ),
     },
   ];
-    const [isVisible, setIsVisible] = React.useState(true);
-  const lastScrollY = React.useRef(0);
+ const [isVisible, setIsVisible] = React.useState(true);
+ const lastScrollY = React.useRef(0);
 
-  React.useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > lastScrollY.current) {
-        setIsVisible(false);
-      } else {
-        setIsVisible(true);
-      }
-      lastScrollY.current = window.scrollY;
-    };
+ const handleScroll = React.useCallback(
+   debounce(() => {
+     if (window.scrollY > lastScrollY.current) {
+       setIsVisible(false);
+     } else {
+       setIsVisible(true);
+     }
+     lastScrollY.current = window.scrollY;
+   }, 100),
+   []
+ );
 
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+ React.useEffect(() => {
+   window.addEventListener("scroll", handleScroll);
+   return () => {
+     window.removeEventListener("scroll", handleScroll);
+   };
+ }, [handleScroll]);
 
-  const pathname = usePathname();
+ const pathname = usePathname();
+
 
 
   return (
     <div>
       <section
-        className={`block text-gray-800 w-full fixed inset-x-0 bottom-0 z-40 h-18 border-t-2 shadow-lg   dark:text-gray-400 border-royal/20 lg:hidden  transition-transform duration-300   bg-[#010101] border-none backdrop-blur-lg ${
-          isVisible ? "transform translate-y-0 " : "transform translate-y-full"
+        className={`block text-gray-800 w-full fixed inset-x-0 bottom-0 z-40 h-18 border-t-2 shadow-lg dark:text-gray-400 border-royal/20 lg:hidden transition-transform duration-300 bg-[#010101] border-none backdrop-blur-lg ${
+          isVisible ? "transform translate-y-0" : "transform translate-y-full"
         }`}
       >
         <div id="tabs" className="flex justify-between">
