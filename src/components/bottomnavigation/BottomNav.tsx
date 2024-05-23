@@ -165,7 +165,7 @@ export function BottomNav() {
        setIsVisible(true);
      }
      lastScrollY.current = window.scrollY;
-   }, 100),
+   }, 10),
    []
  );
 
