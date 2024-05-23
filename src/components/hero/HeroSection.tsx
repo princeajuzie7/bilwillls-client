@@ -148,10 +148,11 @@ export function HeroSection() {
             </div>
           </div>
         </div>
-        <div className="absolute z-0 w-full h-full flex ">
+        <div className="absolute z-0 w-full lg:h-full flex h-[32rem]">
           <Swiper
             slidesPerView={1}
             modules={[Navigation]}
+             
             onSwiper={(swiper) => {
               secondSwiperRef.current = swiper;
               console.log("Second Swiper initialized", swiper);
@@ -165,13 +166,13 @@ export function HeroSection() {
           >
             {slides.map((slide, index) => (
               <SwiperSlide key={index}>
-                <div className="w-full h-full overflow-hidden rounded slider--image">
+                <div className="w-full h-full overflow-hidden rounded slider--image ">
                   <img
                     src={slide.img}
                     className="object-cover w-full rounded  h-full transition-[3s] mix-blend-overlay  "
                     alt={slide.title}
                   />
-                  <div className=" lg:left-16 md:left-8  left-0 px-8 absolute top-[50%] z-[99] transform translate-y-[-50%] w-full">
+                  <div className=" lg:left-16 md:left-8  left-0 px-8 absolute top-[55%] z-[99] transform translate-y-[-50%] w-full">
                     <div className="flex items-center h-full">
                       <div className="lg:w-1/2 w-full">
                         <div className="slider-content">

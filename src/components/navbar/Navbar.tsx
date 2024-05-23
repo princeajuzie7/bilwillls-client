@@ -37,7 +37,7 @@ export function Navbar() {
             alt="bilwills"
             height={200}
             width={200}
-            className="h-16 w-36 "
+            className="h-16 lg:w-36 w-32 "
           />
         </a>
         <div
