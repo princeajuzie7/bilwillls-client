@@ -21,8 +21,10 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed w-full top-0 z-50 py-2 ${
-        isSticky ? "shadow-custom animate-sticky backdrop-blur-lg bg-black/25 py-1" : ""
+      className={`fixed w-full top-0 z-50 py-2   ${
+        isSticky
+          ? "shadow-custom animate-sticky backdrop-blur-lg bg-black/25 py-1"
+          : ""
       }`}
     >
       <nav
@@ -44,7 +46,7 @@ export function Navbar() {
         >
           <div className="flex flex-col gap-5 mt-5 sm:flex-row sm:items-center sm:mt-0 sm:ps-5">
             <a
-              className="font-medium text-blue-500"
+              className="font-medium text-[#3EE783]"
               href="#"
               aria-current="page"
             >
@@ -74,6 +76,8 @@ export function Navbar() {
             >
               My List
             </a>
+            
+            
             <a
               className="font-medium text-gray-600 hover:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500"
               href="#"
@@ -86,13 +90,13 @@ export function Navbar() {
         <div className=" flex items-center gap-x-2">
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-4 ">
-              <div className="relative border-2 border-white rounded-md px-4 lg:block hidden">
+              <div className="relative border-2 border-white rounded-md pr-5 pl-1 lg:block hidden">
                 <input
                   type="search"
                   name=""
                   placeholder="search"
                   id=""
-                  className="w-32 h-6 focus:border-transparent focus:outline-none  text-white placeholder:pl-1 px-2"
+                  className="w-36 h-6 focus:border-transparent focus:outline-none  text-white placeholder:pl-1 px-1"
                 />
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -141,8 +145,8 @@ export function Navbar() {
               </div>
             </div>
             <img
-              className="inline-block size-8 rounded-lg"
-              src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80"
+              className="inline-block size-8 rounded"
+              src="https://i.pinimg.com/564x/1b/a2/e6/1ba2e6d1d4874546c70c91f1024e17fb.jpg"
               alt="Image Description"
             />
           </div>
