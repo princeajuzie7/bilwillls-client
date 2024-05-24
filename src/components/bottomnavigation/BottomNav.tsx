@@ -183,9 +183,7 @@ export function BottomNav() {
   return (
     <div>
       <section
-        className={`block text-gray-800 w-full fixed inset-x-0 bottom-0 z-40 h-18 border-t-2 shadow-lg dark:text-gray-400 border-royal/20 lg:hidden transition-transform duration-300 bg-[#010101] border-none backdrop-blur-lg ${
-          isVisible ? "transform translate-y-0" : "transform translate-y-full"
-        }`}
+        className={`block text-gray-800 w-full fixed inset-x-0 bottom-0 z-40 h-18 border-t-2 shadow-lg dark:text-gray-400 border-royal/20 lg:hidden transition-transform duration-300 bg-[#010101] border-none backdrop-blur-lg $`}
       >
         <div id="tabs" className="flex justify-between">
           {bottomItem.map((item, idx) => {

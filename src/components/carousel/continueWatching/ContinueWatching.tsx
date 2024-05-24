@@ -76,7 +76,7 @@ export function ContinueWatching() {
     e?.stopPropagation()
   }
   return (
-    <div className=" pt-24 flex items-center justify-center px-4 xl:px-12 ">
+    <div className=" lg:pt-24 pt-2 flex items-center justify-center px-4 xl:px-12 ">
       <div className=" overflow-hidden">
         <div className="flex items-center justify-between px-1 md:px-3 mb-4">
           <h5 className="main-title capitalize mb-0">Continue Watching</h5>
@@ -84,14 +84,14 @@ export function ContinueWatching() {
         <div className="flex justify-center">
           <Swiper
             slidesPerView={5}
-            spaceBetween={10}
+            // spaceBetween={10}
             navigation={{
               prevEl: ".swiper-button-prev",
               nextEl: ".swiper-button-next",
             }}
             breakpoints={{
               320: {
-                slidesPerView: 1,
+                slidesPerView: 2,
                 spaceBetween: 0,
               },
               480: {
@@ -116,7 +116,7 @@ export function ContinueWatching() {
           >
             {movies.map((movie, index) => (
               <SwiperSlide key={index} className="swiper-slide-center">
-                <div className=" w-full  px-4">
+                <div className=" w-full  px-[.4687rem] lg:px-4">
                   <div className="relative">
                     <div className="relative">
                       <div className="image-box">
@@ -124,7 +124,7 @@ export function ContinueWatching() {
                           <img
                             src={movie.imageUrl}
                             alt="movie-card"
-                            className="w-full object-cover block border-0 h-[180px] rounded-[.188rem] mix-blend-overlay"
+                            className="w-full object-cover block border-0 lg:h-[180px] h-[100px] rounded-[.188rem] mix-blend-overlay"
                           />
                         </a>
                       </div>

@@ -49,7 +49,7 @@ export function HeroSection() {
 
   return (
     <div>
-      <div className="relative flex  justify-end  h-screen mt[-20px]">
+      <div className="relative flex  justify-end  lg:h-screen h-[32.125rem;] mt[-20px]">
         <div className="relative my-auto hidden lg:block">
           <div className=" custom-hero-bg w-[27rem] relative mt-[74px]  pt-9 pb-9 pl-9 pr-0 right-0 z-10 ">
             {/* <h1 className=" text-white">
@@ -152,7 +152,6 @@ export function HeroSection() {
           <Swiper
             slidesPerView={1}
             modules={[Navigation]}
-             
             onSwiper={(swiper) => {
               secondSwiperRef.current = swiper;
               console.log("Second Swiper initialized", swiper);
@@ -337,7 +336,6 @@ export function HeroSection() {
                                 fill="white"
                               />
                             </svg>
-
                           </a>
                         </div>
                       </div>
