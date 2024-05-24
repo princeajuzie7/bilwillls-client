@@ -22,11 +22,7 @@ body{
 }
 
 
-.custom-hero-bg {
-  background: linear-gradient(-270deg, #141414 0%, rgba(20, 20, 20, 0) 100%) !important;
-  
-}
-
+/* scroll bar track  */
 
 ::-webkit-scrollbar {
   margin-top: 2px;
@@ -47,6 +43,15 @@ body{
 ::-webkit-scrollbar-thumb:hover {
   background-color: #817c7c9a;
   width: 4px;
+}
+
+
+/* hero section style  */
+
+
+.custom-hero-bg {
+  background: linear-gradient(-270deg, #141414 0%, rgba(20, 20, 20, 0) 100%) !important;
+  
 }
 
 .swiper-container {
@@ -95,8 +100,8 @@ body{
 }
 
 .swiper-slide-active .RightAnimate-two {
-    /* -webkit-animation:RightAnimate .6s cubic-bezier(.39,.575,.565,1) .4s both; */
-    /* animation:RightAnimate .6s cubic-bezier(.39,.575,.565,1) .4s both; */
+    -webkit-animation:RightAnimate .6s cubic-bezier(.39,.575,.565,1) .4s both;
+    animation:RightAnimate .6s cubic-bezier(.39,.575,.565,1) .4s both;
 }
 
 .swiper-slide-active .RightAnimate-three {
@@ -168,4 +173,63 @@ body{
 
 .slider--image {
     background: linear-gradient(90.3deg, #181616 9.88%, rgba(19, 18, 18, 0) 31.52%), linear-gradient(266.54deg, #181616 13.29%, rgba(19, 18, 18, 0) 98.41%);
+}
+
+
+
+
+/* continue watching styles  */
+
+.image-box{
+    position: relative;
+    transition: all .5s ease-in-out;
+    border-radius: .188rem;
+    background: linear-gradient(180deg, rgba(12, 11, 17, 0) 50%, #000 100%);
+}
+
+.swiper-button-prev.swiper-button-disabled, .swiper-button-next.swiper-button-disabled {
+    opacity: 0.35;
+    cursor: auto;
+    pointer-events: none;
+}
+
+.swiper-button {
+    width: 1.875rem !important;
+    height: 1.875rem !important;
+    text-align: center;
+    line-height: 1.875rem;
+    color: #ffff;
+    background: transparent;
+    border-radius: 50%;
+    border: .0625em solid #ffff;
+    z-index: 1;
+    transition: all .3s ease-in-out;
+    font-size: 1em
+}
+
+.swiper-button i {
+    vertical-align: middle
+}
+
+.swiper-button:after {
+    font-size: .625rem !important;
+    color: #ffff
+}
+
+.swiper-button.swiper-button-prev {
+    left: 1em;
+    z-index: 5;
+}
+
+.swiper-button.swiper-button-next {
+    right: 1em
+}
+
+.swiper-button:hover {
+    background: rgb( 229, 9, 20);
+    border: .0625em solid #e50914;
+}
+
+.swiper-button-next,.swiper-button-prev {
+    top: 50%
 }

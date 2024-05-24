@@ -12,7 +12,10 @@ export default function Page() {
       <div>
         <ContinueWatching />
       </div>
-<AvatarGenerator />
+      <div className=" pt-11">
+
+      </div>
+{/* <AvatarGenerator /> */}
     </div>
   );
 }

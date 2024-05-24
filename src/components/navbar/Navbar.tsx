@@ -28,7 +28,7 @@ export function Navbar() {
       }`}
     >
       <nav
-        className="max-w-[85rem] w-full mx-auto px-4 flex items-center justify-between "
+        className="max-w-[85rem] w-full mx-auto lg:px-0 px-4 flex items-center justify-between "
         aria-label="Global"
       >
         <a className=" flex-none text-xl " href="#">
@@ -39,6 +39,7 @@ export function Navbar() {
             width={200}
             className="h-16 lg:w-36 w-32 "
           />
+      
         </a>
         <div
           id="navbar-alignment"
@@ -76,8 +77,7 @@ export function Navbar() {
             >
               My List
             </a>
-            
-            
+
             <a
               className="font-medium text-gray-600 hover:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500"
               href="#"
