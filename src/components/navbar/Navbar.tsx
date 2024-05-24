@@ -21,11 +21,13 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed w-full top-0 z-50 py-2   ${
-        isSticky
-          ? "shadow-custom animate-sticky backdrop-blur-lg bg-black/25 py-1"
-          : ""
+      className={`fixed w-full top-0 z-50 py-2 ${
+        isSticky ? "shadow-custom animate-sticky bg-black/25 py-1" : ""
       }`}
+      style={{
+        backdropFilter: isSticky ? "blur(10px)" : "none",
+        WebkitBackdropFilter: isSticky ? "blur(10px)" : "none",
+      }}
     >
       <nav
         className="max-w-[85rem] w-full mx-auto lg:px-0 px-4 flex items-center justify-between "
@@ -39,7 +41,6 @@ export function Navbar() {
             width={200}
             className="h-16 lg:w-36 w-32 "
           />
-      
         </a>
         <div
           id="navbar-alignment"
