@@ -49,7 +49,7 @@ export function HeroSection() {
 
   return (
     <div>
-      <div className="relative flex  justify-end  lg:h-screen h-[32.125rem;] mt[-20px]">
+      <div className="relative flex  justify-end  lg:h-screen h-[32.125rem;]">
         <div className="relative my-auto hidden lg:block">
           <div className=" custom-hero-bg w-[27rem] relative mt-[74px]  pt-9 pb-9 pl-9 pr-0 right-0 z-10 ">
             {/* <h1 className=" text-white">
@@ -171,7 +171,7 @@ export function HeroSection() {
                     className="object-cover w-full rounded  h-full transition-[3s] mix-blend-overlay  "
                     alt={slide.title}
                   />
-                  <div className=" lg:left-16 md:left-8  left-0 px-8 absolute top-[55%] z-[99] transform translate-y-[-50%] w-full">
+                  <div className=" lg:left-16 md:left-8  left-0 lg:px-8 px-4 absolute top-[55%] z-[99] transform translate-y-[-50%] w-full">
                     <div className="flex items-center h-full">
                       <div className="lg:w-1/2 w-full">
                         <div className="slider-content">

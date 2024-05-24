@@ -15,7 +15,10 @@ export default function Page() {
       <div className=" pt-11">
 
       </div>
-<AvatarGenerator />
+      <AvatarGenerator />
+      <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum at fugiat odit rerum accusamus alias quasi reprehenderit quis, nesciunt velit.
+      </div>
     </div>
   );
 }
