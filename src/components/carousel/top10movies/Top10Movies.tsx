@@ -158,7 +158,7 @@ export function Top10Movies() {
                       />
                     </a>
                     <span
-                      className="absolute bottom-[-65px] right-0 texture-text font-extrabold transition-all z-[5] text-[7.5em] hover:bottom-[-50px]"
+                      className="absolute lg:bottom-[-65px] right-0 texture-text font-extrabold transition-all z-[5] lg:text-[7.5em] text-[4.5rem] bottom-[-40px] hover:bottom-[-30px] lg:hover:bottom-[-50px]"
                       style={{
                         transitionDuration: "0.4s",
                         transitionTimingFunction: "ease-out",
