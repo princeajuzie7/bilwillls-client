@@ -148,7 +148,7 @@ export function Top10Movies() {
           >
             {movies.map((movie, index) => (
               <SwiperSlide key={index} className="swiper-slide-center">
-                <div className="relative px-4">
+                <div className="relative lg:px-4 px-0">
                   <div className="">
                     <a href="" className="relative z-[1] block">
                       <img
