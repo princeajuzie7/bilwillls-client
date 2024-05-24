@@ -101,7 +101,7 @@ export function Top10Movies() {
   return (
     <div className=" lg:pt-24 pt-2 flex items-center justify-center px-4 lg:px-12  ">
       <div className=" overflow-hidden">
-        <div className="flex items-center justify-between md:px-3 px-2 mb-4">
+        <div className="flex items-center justify-between md:px-7 px-2 mb-4">
           <h5 className="main-title text-capitalize mb-0">
             Top Ten Movies To Watch
           </h5>
