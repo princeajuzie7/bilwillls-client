@@ -21,8 +21,10 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed w-full top-0 z-50 py-2 ${
-        isSticky ? "shadow-custom animate-sticky bg-black/25 py-1" : ""
+  className={`fixed w-full top-0 z-50 py-2 ${
+        isSticky
+          ? "shadow-custom animate-sticky bg-black/25 py-1"
+          : ""
       }`}
       style={{
         backdropFilter: isSticky ? "blur(10px)" : "none",
@@ -30,7 +32,7 @@ export function Navbar() {
       }}
     >
       <nav
-        className="max-w-[85rem] w-full mx-auto lg:px-0 px-4 flex items-center justify-between "
+        className="max-w-[85rem] w-full mx-auto  lg:px-1 px-4 flex items-center justify-between "
         aria-label="Global"
       >
         <a className=" flex-none text-xl " href="#">

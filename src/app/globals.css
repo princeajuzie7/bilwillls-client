@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300&display=swap');
 
 
 
@@ -11,14 +10,13 @@
   padding: 0;
   box-sizing: border-box;
   background-color: transparent;
-
-  font-family: Roboto, Text, Helvetica Neue, sans-serif;
+  font-family: 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 }
 
-body{
+body {
   background-color: #0B0C0F;
   color: white;
-  font-family:  Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 
@@ -177,6 +175,11 @@ body{
 
 
 
+.iq-top-ten-block-slider .swiper-wrapper {
+    margin-bottom: 3rem !important;
+}
+
+
 
 /* continue watching styles  */
 
@@ -226,10 +229,27 @@ body{
 }
 
 .swiper-button:hover {
-    background: rgb( 229, 9, 20);
-    border: .0625em solid #e50914;
+    background: #3EE783;
+    border: .0625em solid #3EE783;
 }
 
 .swiper-button-next,.swiper-button-prev {
     top: 50%
+}
+
+.iq-top-ten-block-slider .swiper-wrapper .swiper-slide {
+    padding: 0 .9375rem;
+}
+
+.iq-top-ten-block-slider .swiper-button.swiper-button-next {
+    right: 2rem;
+}
+.iq-top-ten-block-slider .swiper-button.swiper-button-prev {
+    left: 2rem;
+}
+
+@media (max-width: 767px) {
+   .iq-top-ten-block-slider .swiper-wrapper .swiper-slide {
+        padding: 0 .4687rem;
+    }
 }

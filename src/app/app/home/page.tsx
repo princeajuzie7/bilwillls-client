@@ -1,7 +1,7 @@
 import React from "react";
 import { HeroSection } from "@/components";
 import AvatarGenerator from "@/components/test/Avatar";
-import { ContinueWatching } from "@/components/carousel";
+import { ContinueWatching, Top10Movies } from "@/components/carousel";
 export default function Page() {
   return (
     <div >
@@ -12,8 +12,8 @@ export default function Page() {
       <div>
         <ContinueWatching />
       </div>
-      <div className=" pt-11">
-
+      <div className="">
+     <Top10Movies />
       </div>
       <AvatarGenerator />
       <div>

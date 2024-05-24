@@ -5,6 +5,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore from "swiper/core";
 // import { Navigation } from "swiper/react";
 import { Navigation } from "swiper/modules";
+import 'swiper/css'; // Add Swiper CSS
+import 'swiper/css/navigation'; // Add Swiper Navigation CSS
 
 SwiperCore.use([Navigation]);
 export function ContinueWatching() {
@@ -72,6 +74,19 @@ export function ContinueWatching() {
     },
   ];
 
+  const [isMounted, setIsMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+
+
+    if (!isMounted) {
+      return null; // or a loading spinner, or placeholder content
+    }
+
+  
   const handleclick = (e: Event | any) => {
     e?.stopPropagation()
   }
