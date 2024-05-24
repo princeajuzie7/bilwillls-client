@@ -15,7 +15,7 @@ export default function Page() {
       <div className=" pt-11">
 
       </div>
-{/* <AvatarGenerator /> */}
+<AvatarGenerator />
     </div>
   );
 }
