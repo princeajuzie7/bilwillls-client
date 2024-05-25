@@ -6,6 +6,7 @@ import SwiperCore, { Swiper as SwiperClass } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import "swiper/css/effect-fade";
 
 export function HeroSection() {
   const firstSwiperRef = useRef<SwiperClass | null>(null);
@@ -79,6 +80,7 @@ export function HeroSection() {
                   firstSwiperRef.current = swiper;
                   console.log("First Swiper initialized", swiper);
                 }}
+                effect={"fade"}
                 loop={true}
                 navigation={{
                   prevEl: ".slider-prev",
