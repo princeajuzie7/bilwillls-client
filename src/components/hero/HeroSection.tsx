@@ -153,6 +153,7 @@ export function HeroSection() {
         <div className="absolute z-0 w-full lg:h-full flex h-[32rem]">
           <Swiper
             slidesPerView={1}
+             effect={"fade"}
             modules={[Navigation,EffectFade]}
             onSwiper={(swiper) => {
               secondSwiperRef.current = swiper;
