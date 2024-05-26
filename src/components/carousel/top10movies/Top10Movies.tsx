@@ -101,7 +101,7 @@ export function Top10Movies() {
   return (
     <div className=" lg:pt-24 pt-2 flex items-center justify-center px-4 lg:px-12  ">
       <div className=" overflow-hidden">
-        <div className="flex items-center justify-between md:px-7 px-2 mb-4">
+        <div className="flex items-center justify-between md:px-7 px-2 mb-10">
           <h5 className="main-title text-capitalize mb-0">
             Top Ten Movies To Watch
           </h5>
@@ -154,7 +154,7 @@ export function Top10Movies() {
                         <img
                           src={movie.imageUrl}
                           alt={movie.title}
-                          className="w-full h-auto max-w-full object-cover rounded-[0.188rem] transition"
+                          className="w-full h-full max-w-full object-cover rounded-[0.188rem] transition" style={{aspectRatio: 2/3}}
                         />
                       </a>
                       <span

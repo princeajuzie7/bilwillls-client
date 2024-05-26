@@ -107,7 +107,7 @@ export function OnlyonBilwills() {
           scaleupanimate ? "card-style-slider" : ""
         }  `}
       >
-        <div className="flex items-center justify-between md:px-7 px-2 mb-[-27px]">
+        <div className="flex items-center justify-between md:px-7 px-2 mb-[-40px]">
           <h5 className="main-title text-capitalize mb-0">Only on Bilwills</h5>
           <a
             className="text-primary iq-view-all text-decoration-none text-[#3EE783]"
@@ -169,7 +169,7 @@ export function OnlyonBilwills() {
                       <div className="cart-content">
                         <div className="content-left">
                           <h5 className="iq-title capitalize">
-                            <a href="/streamit/react/frontend/movies-detail">
+                            <a href="/streamit/react/frontend/movies-detail" className=" font-medium text-xl">
                               Giikre
                             </a>
                           </h5>
@@ -179,9 +179,9 @@ export function OnlyonBilwills() {
                             </span>
                           </div>
                         </div>
-                        <div className="watchlist">
+                        <div className="watchlist ">
                           <a
-                            className="watch-list-not"
+                            className="watch-list-not flex items-center text-center gap-1"
                             href="/streamit/react/frontend/playlist"
                           >
                             <svg
