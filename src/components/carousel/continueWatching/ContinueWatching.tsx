@@ -93,10 +93,8 @@ export function ContinueWatching() {
   return (
     <div className=" lg:pt-24 pt-2 flex items-center justify-center px-4  lg:px-16 ">
       <div className=" overflow-hidden">
-        <div className="flex items-center justify-between px-1 md:px-3 mb-4">
-          <h5 className="main-title capitalize mb-0 ">
-            Continue Watching
-          </h5>
+        <div className="flex items-center justify-between px-1 md:px-3 mb-6">
+          <h5 className="main-title capitalize mb-0 ">Continue Watching</h5>
         </div>
         <div className="flex justify-center continuewatching">
           <Swiper
