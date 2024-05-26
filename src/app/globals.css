@@ -287,6 +287,12 @@ body {
 .main-title {
     font-size:  1.333rem;
 }
+
+@media (max-width: 767px) {
+    .main-title {
+        font-size: 1rem;
+    }
+}
 .swiper-wrapper .swiper-slide {
     padding: 0 .9375rem;
 }
