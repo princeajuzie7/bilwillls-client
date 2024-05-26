@@ -96,7 +96,7 @@ export function ContinueWatching() {
         <div className="flex items-center justify-between px-1 md:px-3 mb-4">
           <h5 className="main-title capitalize mb-0">Continue Watching</h5>
         </div>
-        <div className="flex justify-center">
+        <div className="flex justify-center continuewatching">
           <Swiper
             slidesPerView={5}
             // spaceBetween={10}

@@ -237,8 +237,11 @@ body {
     top: 50%
 }
 
-.iq-top-ten-block-slider .swiper-wrapper .swiper-slide {
+.onlyon-bilwills-block-slider .swiper-wrapper .swiper-slide {
     padding: 0 .9375rem;
+}
+.continuewatching .swiper-wrapper .swiper-slide {
+    padding: 0;
 }
 
 .iq-top-ten-block-slider .swiper-button.swiper-button-next {
@@ -262,3 +265,448 @@ body {
 }
 
 }
+
+
+/* top 10 movie to watch  */
+
+@media (max-width: 767px) {
+ .iq-top-ten-block:hover .block-image .top-ten-numbers {
+    bottom: -50px
+}
+}
+
+
+ .iq-top-ten-block:hover .block-image .top-ten-numbers {
+    bottom: -30px
+}
+
+
+
+/* only on bilwills style */
+
+
+.swiper-wrapper .swiper-slide {
+    padding: 0 .9375rem;
+}
+.onlyon-bilwills-block-slider .swiper-wrapper {
+   margin-top: 5rem !important;
+    margin-bottom: 6.25rem;
+
+}
+
+.iq-card .block-images {
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    transition: all .6s ease 0s;
+    overflow: hidden
+}
+
+.iq-card .block-images .img-box {
+    border-radius: .1875rem;
+    overflow: hidden
+}
+
+.iq-card .block-images .img-box:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(0deg,#0c0b11 8.71%,rgba(12,11,17,0) 72.11%);
+    border-radius: .1875rem;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    transition: all .5s ease-in-out;
+    opacity: 0
+}
+
+.iq-card .block-images .img-box a {
+    z-index: 1
+}
+
+.iq-card .block-images .img-box img {
+    mix-blend-mode: overlay;
+    aspect-ratio: 2/3
+}
+
+.iq-card .block-images .card-description {
+    z-index: 9;
+    transition: all .4s ease-in-out;
+    padding: 1.25rem 1.25rem .625rem;
+    transform: translateZ(0);
+    -webkit-font-smoothing: antialiased
+}
+
+.iq-card .block-images .card-description .cart-content a {
+    font-size: inherit;
+    color: inherit;
+    text-decoration: none
+}
+
+.iq-card .block-images .card-description .cart-content a.watch-list-not {
+    font-size: .75rem;
+    font-weight: 500;
+    color: #D1D0CF
+}
+
+.iq-card .block-images .card-description.with-transition {
+    bottom: -4.375rem;
+    opacity: 0;
+    padding: 1.25rem 0 0;
+    visibility: hidden;
+    transition: all .1s ease
+}
+
+.iq-card .block-images:after {
+    position: absolute;
+    content: "";
+    border: 1.25rem solid #141314;
+    bottom: -5rem;
+    left: -1.25rem;
+    right: -1.25rem;
+    top: -1.25rem;
+    opacity: 0;
+    transition: all .1s ease-in-out;
+    visibility: hidden;
+    background: transparent;
+    border-radius: .187rem
+}
+
+.iq-card .movie-time-text {
+    color: #D1D0CF;
+    font-size: .75rem
+}
+
+.iq-card .card-description {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: auto;
+    right: 0;
+    transition: all .4s ease-in-out;
+    padding: 1.25rem 1.25rem .625rem;
+    -webkit-transform: translate3d(0,0,0);
+    transform: translateZ(0);
+    -webkit-font-smoothing: antialiased
+}
+
+.iq-card .block-social-info {
+    position: absolute;
+    left: 1.25rem;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    z-index: 999;
+    display: flex;
+    opacity: 0;
+    justify-content: space-between;
+    top: inherit;
+    transition: opacity .2s ease-in-out
+}
+
+.iq-card .block-social-info .share-wrapper {
+    position: absolute;
+    top: inherit;
+    right: 0;
+    left: -.375rem;
+    bottom: 80%;
+    min-width: inherit;
+    height: auto;
+    width: 2.375rem
+}
+
+.iq-card .block-social-info .share .share-wrapper {
+    display: none
+}
+
+.iq-card .block-social-info .share:hover .share-wrapper {
+    display: inline-block;
+}
+
+.iq-card .block-social-info .music-play-lists li {
+    width: 1.625rem;
+    height: 1.625rem;
+    margin-bottom: 0;
+    border-radius: 50%;
+    line-height: 2.1875rem;
+    margin: 0 auto .4375rem;
+    background-color: transparent;
+    border: .0625rem solid #ffff;
+    transition: all .45s ease 0s
+}
+
+.iq-card .block-social-info .music-play-lists li:hover {
+    border-color: #3EE783;
+    background: #3EE783
+}
+
+.iq-card .block-social-info .music-play-lists .share>span {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 0;
+    font-size: 1rem
+}
+
+.iq-card .block-social-info .music-play-lists span i {
+    color: #ffff;
+    font-size: .625em;
+    
+    line-height: 2.5em;
+    cursor: pointer
+}
+
+.iq-card .share-boxs .share-shape {
+    position: absolute;
+    left: .75rem;
+    top: inherit;
+    bottom: -.875rem;
+    transform: rotate(90deg);
+    right: 0;
+    width: .875rem;
+    height: 2.5rem
+}
+
+.iq-card .share-boxs .share-shape path {
+    fill: #141314
+}
+
+.iq-card .share-boxs .overflow-hidden {
+    background: #141314;
+ 
+}
+
+.iq-card .share-boxs .overflow-hidden a,.iq-card .share-boxs .overflow-hidden span {
+    display:  inline-block;
+    width: 2.375rem;
+    background: #141314;
+    color: #ffff
+}
+
+.iq-card .share-boxs a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 12px;
+    margin: auto !important;
+}
+.iq-card .share-boxs a:hover {
+    color: #3EE783
+}
+
+.iq-card .iq-button .btn {
+    width: 2.5rem;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    padding: 0;
+    overflow: hidden
+}
+
+.iq-card:hover .block-images .img-box {
+    background: transparent
+}
+
+.iq-card:hover .block-images .img-box img {
+    mix-blend-mode: inherit
+}
+
+.iq-card:hover .block-images .img-box:before {
+    opacity: 1
+}
+
+.iq-card:hover .block-images .card-description {
+    background: #141314
+}
+
+.iq-card:hover .block-images .card-description.with-transition {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: .2s
+}
+
+.iq-card:hover .block-images .card-description.with-transition .cart-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap
+}
+
+.iq-card:hover .block-images .card-description.with-transition .watchlist {
+    transition-delay: 0s
+}
+
+.iq-card:hover .block-images:after {
+    opacity: 1;
+    transition: all .2s ease-in-out;
+    visibility: visible;
+    transition-delay: .2s
+}
+
+.iq-card:hover .block-social-info {
+    opacity: 1;
+    transition-delay: .3s
+}
+
+.card-style-slider li.swiper-slide {
+    padding: 0 .9375rem
+}
+
+.card-hover:hover .block-images {
+    z-index: 999;
+    transform: scale3d(1.1,1.1,1) translateZ(0) perspective(31.25rem);
+    transform-origin: 50% 50%;
+    transition: all .6s ease 0s;
+    box-shadow: none;
+    transition-delay: .2s;
+    overflow: visible;
+    margin-top: -1.875rem
+}
+
+.card-style-slider li.swiper-slide.swiper-slide-active .card-hover:hover .block-images {
+    transform: scale3d(1.1,1.1,1) translate3d(12%,0,0) perspective(31.25rem);
+     background-color: red;
+}
+
+.card-style-slider li.swiper-slide.swiper-active.last .card-hover:hover .block-images {
+    transform: scale3d(1.1,1.1,1) translate3d(-12%,0,0) perspective(31.25rem)
+}
+
+@media (max-width: 1024px) {
+    .iq-card:hover .block-images {
+        margin-top:0
+    }
+
+    .card-hover:hover .block-images,.card-style-slider li.swiper-slide.swiper-slide-active .card-hover:hover .block-images {
+        transform: scale3d(1.1,1.1,1) translate3d(5%,0,0) perspective(31.25em)
+    }
+
+    .iq-card:hover .block-social-info {
+        opacity: 0
+    }
+
+    .iq-card:hover .block-images:after {
+        display: none
+    }
+
+    .iq-card:hover .block-images .card-description.with-transition {
+        opacity: 0
+    }
+}
+
+@media (max-width: 767px) {
+    .card-style-slider li.swiper-slide {
+        padding:0 .4687rem;
+        margin-bottom: 0
+    }
+}
+
+.iq-card-style-2 .block-images .img-box img {
+    height: 10.125rem;
+    aspect-ratio: 3/2
+}
+
+.card-style-grid .slide-items {
+    padding: 0 .9375em;
+    margin-bottom: 1.875em
+}
+
+.card-style-grid:hover .block-images {
+    margin-top: unset
+}
+
+.card-hover-style-two .block-images .img-box {
+    width: 100%;
+    overflow: hidden;
+    transform: translateZ(0);
+    transition: all .6s ease 0s
+}
+
+.card-hover-style-two .block-images:hover .img-box {
+    z-index: 99;
+    transform: scale3d(1.1,1.1,1) translateZ(0) perspective(31.25em);
+    transform-origin: 50% 50%;
+    transition: all .6s ease 0s
+}
+
+
+
+.iq-button .btn {
+    color: #ffff;
+    font-size: .875rem;
+    line-height: 1rem;
+    font-weight: 500;
+    border-radius: .1875rem;
+    display: flex;
+    align-items: center !important;
+    justify-content: center !important;
+    background: rgba(62, 231, 131,.8);
+    border: .063em solid #3EE783;
+    transition: color .3s ease;
+    transform: perspective(.063em) translateZ(0)
+}
+
+
+.iq-button .btn:focus,.iq-button .btn:active {
+    border-color: #3EE783;
+    background: #3EE783
+}
+
+
+.iq-card .iq-button .btn {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    padding: 0;
+    overflow: hidden;
+}
+
+.iq-button .btn:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #3EE783;
+    border: .063em solid #3EE783;
+    transform: scaleX(1);
+    transform-origin: 50%;
+    transition: transform .3s ease-out
+}
+
+.iq-button .btn:hover:before {
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0)
+}
+
+.iq-button.link-button .btn {
+    padding: 0;
+    color: #3EE783;
+    border: 0;
+    background: transparent
+}
+
+.iq-button.link-button .btn:before {
+    content: none
+}
+
+.iq-button.link-button .btn:hover {
+    color: #D1D0CF
+}
+
+@media (max-width: 767px) {
+    .iq-button .btn {
+        padding:.75rem 1.5rem
+    }
+}
+
+
+

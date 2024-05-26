@@ -116,7 +116,6 @@ export function Top10Movies() {
         <div className="flex justify-center iq-top-ten-block-slider">
           <Swiper
             slidesPerView={6}
-         
             navigation={{
               prevEl: ".swiper-button-prev",
               nextEl: ".swiper-button-next",
@@ -148,24 +147,26 @@ export function Top10Movies() {
           >
             {movies.map((movie, index) => (
               <SwiperSlide key={index} className="swiper-slide-center">
-                <div className="relative lg:px-4 px-0">
-                  <div className="">
-                    <a href="" className="relative z-[1] block">
-                      <img
-                        src={movie.imageUrl}
-                        alt={movie.title}
-                        className="w-full h-auto max-w-full object-cover rounded-[0.188rem] transition"
-                      />
-                    </a>
-                    <span
-                      className="absolute lg:bottom-[-65px] right-0 texture-text font-extrabold transition-all z-[5] lg:text-[7.5em] text-[4.5rem] bottom-[-40px] hover:bottom-[-30px] lg:hover:bottom-[-50px]"
-                      style={{
-                        transitionDuration: "0.4s",
-                        transitionTimingFunction: "ease-out",
-                      }}
-                    >
-                      {movie.id}
-                    </span>
+                <div className="iq-top-ten-block">
+                  <div className="block-image relative lg:px-4 px-0 ">
+                    <div className="">
+                      <a href="" className="relative z-[1] block ">
+                        <img
+                          src={movie.imageUrl}
+                          alt={movie.title}
+                          className="w-full h-auto max-w-full object-cover rounded-[0.188rem] transition"
+                        />
+                      </a>
+                      <span
+                        className="top-ten-numbers absolute lg:bottom-[-65px] right-0 texture-text font-extrabold transition-all z-[5] lg:text-[7.5em] text-[4.5rem] bottom-[-40px] hover:bottom-[-30px] "
+                        style={{
+                          transitionDuration: "0.4s",
+                          transitionTimingFunction: "ease-out",
+                        }}
+                      >
+                        {movie.id}
+                      </span>
+                    </div>
                   </div>
                 </div>
               </SwiperSlide>
