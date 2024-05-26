@@ -1,0 +1,137 @@
+/* hero section style  */
+
+
+.custom-hero-bg {
+  background: linear-gradient(-270deg, #141414 0%, rgba(20, 20, 20, 0) 100%) !important;
+  
+}
+
+.swiper-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.slider-next {
+    position: absolute;
+    z-index: 10;
+    left: 2.8125em;
+    bottom: 0;
+    color: white;
+}
+
+ .slider-prev {
+    position: absolute;
+    z-index: 10;
+    color: white;
+    left: 0;
+    bottom: 0;
+}
+
+.swiper-button {
+    width: 1.875rem;
+    align-items: center;
+    height: 1.875rem;
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+    text-align: center;
+    line-height: 1.875rem;
+    color: #ffff;
+    background: transparent;
+    border-radius: 50%;
+    border: .0625em solid #ffff;
+    z-index: 1;
+    transition: all .3s ease-in-out;
+    font-size: 1em;
+}
+
+.swiper-slide-active .RightAnimate {
+    -webkit-animation: RightAnimate .6s cubic-bezier(.39,.575,.565,1) .2s both;
+    animation: RightAnimate .6s cubic-bezier(.39,.575,.565,1) .2s both
+}
+
+.swiper-slide-active .RightAnimate-two {
+    -webkit-animation:RightAnimate .6s cubic-bezier(.39,.575,.565,1) .4s both;
+    animation:RightAnimate .6s cubic-bezier(.39,.575,.565,1) .4s both;
+}
+
+.swiper-slide-active .RightAnimate-three {
+    -webkit-animation: RightAnimate .6s cubic-bezier(.39,.575,.565,1) .6s both;
+    animation: RightAnimate .6s cubic-bezier(.39,.575,.565,1) .6s both
+}
+
+.swiper-slide-active .RightAnimate-four {
+    -webkit-animation: RightAnimate .6s cubic-bezier(.39,.575,.565,1) .8s both;
+    animation: RightAnimate .6s cubic-bezier(.39,.575,.565,1) .8s both
+}
+
+@-webkit-keyframes RightAnimate {
+    0% {
+        -webkit-transform: translateX(50px);
+        transform: translate(50px);
+        opacity: 0
+    }
+
+    to {
+        -webkit-transform: translateX(0);
+        transform: translate(0);
+        opacity: 1
+    }
+}
+
+@keyframes RightAnimate {
+    0% {
+        -webkit-transform: translateX(50px);
+        transform: translate(50px);
+        opacity: 0
+    }
+
+    to {
+        -webkit-transform: translateX(0);
+        transform: translate(0);
+        opacity: 1
+    }
+}
+
+.movie-tag li:first-child:before  {
+    content: "";
+    height: .375em;
+    width: .375em;
+    background:#3EE783;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: .5625em;
+    border-radius: 50%;
+}
+
+.texture-text {
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    line-height: normal;
+    background-image: url(https://templates.iqonic.design/streamit/react/frontend/assets/images/pages/texure.webp)
+}
+
+
+.iq-button .btn {
+
+    transition: color .3s ease;
+
+    transform: perspective(.063em) translateZ(0);
+}
+
+
+.slider--image {
+    background: linear-gradient(90.3deg, #181616 9.88%, rgba(19, 18, 18, 0) 31.52%), linear-gradient(266.54deg, #181616 13.29%, rgba(19, 18, 18, 0) 98.41%);
+}
+
+
+
+.iq-top-ten-block-slider .swiper-wrapper {
+    margin-bottom: 3rem !important;
+}
+
+
+
