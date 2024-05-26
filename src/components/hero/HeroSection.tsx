@@ -1,11 +1,12 @@
 "use client";
 import React, { useRef, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import { Navigation,EffectFade } from "swiper/modules";
 import SwiperCore, { Swiper as SwiperClass } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import "swiper/css/effect-fade";
 
 export function HeroSection() {
   const firstSwiperRef = useRef<SwiperClass | null>(null);
@@ -79,6 +80,7 @@ export function HeroSection() {
                   firstSwiperRef.current = swiper;
                   console.log("First Swiper initialized", swiper);
                 }}
+                effect={"fade"}
                 loop={true}
                 navigation={{
                   prevEl: ".slider-prev",
@@ -151,7 +153,8 @@ export function HeroSection() {
         <div className="absolute z-0 w-full lg:h-full flex h-[32rem]">
           <Swiper
             slidesPerView={1}
-            modules={[Navigation]}
+             effect={"fade"}
+            modules={[Navigation,EffectFade]}
             onSwiper={(swiper) => {
               secondSwiperRef.current = swiper;
               console.log("Second Swiper initialized", swiper);
