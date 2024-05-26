@@ -284,9 +284,18 @@ body {
 
 /* only on bilwills style */
 
-
+.main-title {
+    font-size:  1.333rem;
+}
 .swiper-wrapper .swiper-slide {
     padding: 0 .9375rem;
+}
+@media (max-width: 1024px) {
+.onlyon-bilwills-block-slider .swiper-wrapper {
+   margin-top: 5rem !important;
+    margin-bottom: 6.25rem;
+
+}
 }
 .onlyon-bilwills-block-slider .swiper-wrapper {
    margin-top: 5rem !important;
