@@ -31,20 +31,20 @@ export function HeroSection() {
   ];
 
   const handleSlideChangeFirst = (swiper: SwiperCore) => {
-    if (
-      secondSwiperRef.current &&
-      secondSwiperRef.current.realIndex !== swiper.realIndex
-    ) {
-      secondSwiperRef.current.slideTo(swiper.realIndex);
-    }
+ if (
+   secondSwiperRef?.current &&
+   secondSwiperRef?.current?.realIndex !== swiper.realIndex
+ ) {
+   secondSwiperRef?.current.slideTo(swiper.realIndex);
+ }
   };
 
   const handleSlideChangeSecond = (swiper: SwiperCore) => {
     if (
-      firstSwiperRef.current &&
-      firstSwiperRef.current.realIndex !== swiper.realIndex
+      firstSwiperRef?.current &&
+      firstSwiperRef?.current.realIndex !== swiper?.realIndex
     ) {
-      firstSwiperRef.current.slideTo(swiper.realIndex);
+      firstSwiperRef?.current.slideTo(swiper?.realIndex);
     }
   };
 
@@ -52,7 +52,7 @@ export function HeroSection() {
     <div>
       <div className="relative flex  justify-end  lg:h-screen h-[32.125rem;]">
         <div className="relative my-auto hidden lg:block">
-          <div className=" custom-hero-bg w-[27rem] relative mt-[74px]  pt-9 pb-9 pl-9 pr-0 right-0 z-10 ">
+          <div className=" custom-hero-bg w-[38em] relative mt-[74px]  pt-9 pb-9 pl-9 pr-0 right-0 z-10 ">
             {/* <h1 className=" text-white">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, non
               tempore culpa ullam suscipit architecto. Doloribus iste odit vitae
@@ -73,7 +73,7 @@ export function HeroSection() {
 
             <div className="relative pb-[3.4375rem]">
               <Swiper
-                spaceBetween={20}
+              
                 slidesPerView={2}
                 modules={[Navigation]}
                 onSwiper={(swiper) => {

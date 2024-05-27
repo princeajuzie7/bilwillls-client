@@ -3,6 +3,7 @@ import "./globals.css";
 import "@/app/styles/onlybilwils.css";
 import "@/app/styles/continuewatching.css";
 import "@/app/styles/herosection.css";
+import "@/app/styles/topmovie.css";
 import "@/app/font/googlefont.css";
 import { PrelineScript } from "@/lib";
 
