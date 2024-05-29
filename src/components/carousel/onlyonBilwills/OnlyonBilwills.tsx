@@ -107,7 +107,7 @@ export function OnlyonBilwills() {
           scaleupanimate ? "card-style-slider" : ""
         }  `}
       >
-        <div className="flex items-center justify-between md:px-7 px-2 mb-[-40px]">
+        <div className="flex items-center justify-between md:px-7 px-2 lg:mb-[-40px] mb-2">
           <h5 className="main-title text-capitalize mb-0">Only on Bilwills</h5>
           <a
             className="text-primary iq-view-all text-decoration-none text-[#3EE783]"
