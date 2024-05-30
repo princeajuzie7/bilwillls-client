@@ -138,33 +138,33 @@ export function Top10Series() {
           episodes: [
             {
               episode: 1,
-              title: "Fire And Blood",
+              title: "The Curse of the black Pearls",
               bannerimg:
-                "https://templates.iqonic.design/streamit/react/frontend/assets/images/tv-show/season/01.webp",
+                "https://templates.iqonic.design/streamit/react/frontend/assets/images/tv-show/season/13.webp",
               id: 1,
               duration: "45 minutes",
             },
             {
               episode: 2,
-              title: "The Pointy Endr",
+              title: "Dead Man's Chest",
               bannerimg:
-                "https://templates.iqonic.design/streamit/react/frontend/assets/images/tv-show/season/03.webp",
+                "https://templates.iqonic.design/streamit/react/frontend/assets/images/tv-show/season/14.webp",
               id: 2,
               duration: "45 minutes",
             },
             {
               episode: 3,
-              title: "You Win or Die",
+              title: "At World's End",
               bannerimg:
-                "https://templates.iqonic.design/streamit/react/frontend/assets/images/tv-show/season/04.webp",
+                "https://templates.iqonic.design/streamit/react/frontend/assets/images/tv-show/season/15.webp",
               id: 3,
               duration: "45 minutes",
             },
             {
               episode: 4,
-              title: "The Black Queen",
+              title: "On Stranger Tides",
               bannerimg:
-                "https://templates.iqonic.design/streamit/react/frontend/assets/images/tv-show/season/05.webp",
+                "https://templates.iqonic.design/streamit/react/frontend/assets/images/tv-show/season/16.webp",
               id: 4,
               duration: "45 minutes",
             },
@@ -177,7 +177,7 @@ export function Top10Series() {
               episode: 1,
               title: "Valar Morghulis",
               bannerimg:
-                "https://templates.iqonic.design/streamit/react/frontend/assets/images/tv-show/season/05.webp",
+                "https://templates.iqonic.design/streamit/react/frontend/assets/images/tv-show/season/17.webp",
               id: 1,
               duration: "45 minutes",
             },
@@ -185,7 +185,7 @@ export function Top10Series() {
               episode: 2,
               title: "Black Water",
               bannerimg:
-                "https://templates.iqonic.design/streamit/react/frontend/assets/images/tv-show/season/06.webp",
+                "https://templates.iqonic.design/streamit/react/frontend/assets/images/tv-show/season/18.webp",
               id: 2,
               duration: "45 minutes",
             },
@@ -193,7 +193,7 @@ export function Top10Series() {
               episode: 3,
               title: "The Ghost Harrenrial",
               bannerimg:
-                "https://templates.iqonic.design/streamit/react/frontend/assets/images/tv-show/season/07.webp",
+                "https://templates.iqonic.design/streamit/react/frontend/assets/images/tv-show/season/19.webp",
               id: 3,
               duration: "45 minutes",
             },
@@ -201,7 +201,7 @@ export function Top10Series() {
               episode: 4,
               title: "Garden of Bones",
               bannerimg:
-                "https://templates.iqonic.design/streamit/react/frontend/assets/images/tv-show/season/08.webp",
+                "https://templates.iqonic.design/streamit/react/frontend/assets/images/tv-show/season/20.webp",
               id: 4,
               duration: "45 minutes",
             },
@@ -214,7 +214,7 @@ export function Top10Series() {
               episode: 1,
               title: "Mhysa",
               bannerimg:
-                "https://templates.iqonic.design/streamit/react/frontend/assets/images/tv-show/season/09.webp",
+                "https://templates.iqonic.design/streamit/react/frontend/assets/images/tv-show/season/21.webp",
               id: 1,
               duration: "45 minutes",
             },
@@ -222,7 +222,7 @@ export function Top10Series() {
               episode: 2,
               title: "Second Sons",
               bannerimg:
-                "https://templates.iqonic.design/streamit/react/frontend/assets/images/tv-show/season/10.webp",
+                "https://templates.iqonic.design/streamit/react/frontend/assets/images/tv-show/season/22.webp",
               id: 2,
               duration: "45 minutes",
             },
@@ -230,7 +230,7 @@ export function Top10Series() {
               episode: 3,
               title: "The Climb",
               bannerimg:
-                "https://templates.iqonic.design/streamit/react/frontend/assets/images/tv-show/season/11.webp",
+                "https://templates.iqonic.design/streamit/react/frontend/assets/images/tv-show/season/23.webp",
               id: 3,
               duration: "45 minutes",
             },
@@ -238,7 +238,7 @@ export function Top10Series() {
               episode: 4,
               title: "Kissed by Fire",
               bannerimg:
-                "https://templates.iqonic.design/streamit/react/frontend/assets/images/tv-show/season/12.webp",
+                "https://templates.iqonic.design/streamit/react/frontend/assets/images/tv-show/season/24.webp",
               id: 4,
               duration: "45 minutes",
             },
@@ -250,14 +250,21 @@ export function Top10Series() {
     },
   ];
 
-  let [activetab, setactivebar] = React.useState<number >(1)
   
-  const ativeepisode = movies.map((m) => m.seasons.map((seasons) => {
-    return seasons.season
-  }))
-  const handlenavigate = (params: number) => {
-   setactivebar(params);
- }
+ const [activeTab, setActiveTab] = React.useState<{ [key: number]: number }>(
+   movies.reduce((acc, movie) => {
+     acc[movie.id] = movie.seasons[0].season;
+     return acc;
+   }, {} as { [key: number]: number })
+ );
+
+ const handleNavigate = (movieId: number, season: number) => {
+   setActiveTab((prevTabs) => ({
+     ...prevTabs,
+     [movieId]: season,
+   }));
+  };
+ 
   return (
     <div className="tab-slider">
       {/* <div>
@@ -326,12 +333,10 @@ export function Top10Series() {
                           </h5>
                         </div>
                         <h1 className="texture-text mb-2 font-medium capitalize lg:text-[4.209rem] text-[1.5615rem] ">
-                          Pirates of Dayones
+                          {movie.title}
                         </h1>
                         <p className="mb-0 text-sm line-clamp-2">
-                          Sand and dust storms (SDS), also known as sirocco,
-                          haboob, yellow dust, white storms, and the harmattan,
-                          are a natural phenomenon linked with land
+                          {movie.description}
                         </p>
                         <ul className="flex items-center list-inline gap-2 p-0 mt-3 mb-10 movie-tag">
                           <li className="text-lg">Nov 2022</li>
@@ -383,100 +388,73 @@ export function Top10Series() {
                             role="tablist"
                           >
                             {movie.seasons.map((seasons, idx) => (
-                              <div className="nav-item" key={idx}>
+                              <div
+                                className="nav-item cursor-pointer"
+                                key={idx}
+                              >
                                 <div
                                   role="tab"
                                   data-rr-ui-event-key="0season"
                                   id="left-tabs-example-tab-0season"
                                   aria-controls="left-tabs-example-tabpane-0season"
                                   aria-selected="true"
-                                  className="nav-link active"
+                                  className={
+                                    activeTab[movie.id] === seasons.season
+                                      ? "text-[#3EE783]"
+                                      : ""
+                                  }
                                   tabIndex={0}
-                                
-                                  onClick={() => {
-                                    handlenavigate(seasons.season);
-                                  }}
+                                  onClick={() =>
+                                    handleNavigate(movie.id, seasons.season)
+                                  }
                                 >
                                   season {seasons.season}
                                 </div>
                               </div>
                             ))}
                           </div>
-                          <div className="tab-content trending-content">
-                             <div
+
+                          <div
+                            className="tab-content trending-content
+                          "
+                          >
+                            <div
                               role="tabpanel"
                               id="left-tabs-example-tabpane-0season"
                               aria-labelledby="left-tabs-example-tab-0season"
                               className="fade tab-pane active show"
                             >
                               <ul className="list-inline m-0 p-0">
-                                <li className="flex items-center gap-3">
-                                  <div className="image-box flex-shrink-0">
-                                    <img
-                                      src="https://templates.iqonic.design/streamit/react/frontend/assets/images/tv-show/season/13.webp"
-                                      alt="image-icon"
-                                      className="img-fluid rounded"
-                                    />
-                                  </div>
-                                  <div className="image-details">
-                                    <h6 className="mb-1 capitalize">
-                                      <span className="text-primary">E1</span> -
-                                      The Curse of the Black Pearl
-                                    </h6>
-                                    <small>45 minute</small>
-                                  </div>
-                                </li>
-                                <li className="flex items-center gap-3">
-                                  <div className="image-box flex-shrink-0">
-                                    <img
-                                      src="https://templates.iqonic.design/streamit/react/frontend/assets/images/tv-show/season/14.webp"
-                                      alt="image-icon"
-                                      className="img-fluid rounded"
-                                    />
-                                  </div>
-                                  <div className="image-details">
-                                    <h6 className="mb-1 capitalize">
-                                      <span className="text-primary">E2</span> -
-                                      Dead Man&apos;s Chest
-                                    </h6>
-                                    <small>45 minute</small>
-                                  </div>
-                                </li>
-                                <li className="flex items-center gap-3">
-                                  <div className="image-box flex-shrink-0">
-                                    <img
-                                      src="https://templates.iqonic.design/streamit/react/frontend/assets/images/tv-show/season/15.webp"
-                                      alt="image-icon"
-                                      className="img-fluid rounded"
-                                    />
-                                  </div>
-                                  <div className="image-details">
-                                    <h6 className="mb-1 capitalize">
-                                      <span className="text-primary">E3</span> -
-                                      At World&apos;s End
-                                    </h6>
-                                    <small>45 minute</small>
-                                  </div>
-                                </li>
-                                <li className="flex items-center gap-3">
-                                  <div className="image-box flex-shrink-0">
-                                    <img
-                                      src="https://templates.iqonic.design/streamit/react/frontend/assets/images/tv-show/season/16.webp"
-                                      alt="image-icon"
-                                      className="img-fluid rounded"
-                                    />
-                                  </div>
-                                  <div className="image-details">
-                                    <h6 className="mb-1 capitalize">
-                                      <span className="text-primary">E4</span> -
-                                      On Stranger Tides
-                                    </h6>
-                                    <small>45 minute</small>
-                                  </div>
-                                </li>
+                                {movie.seasons
+                                  .find(
+                                    (season) =>
+                                      season.season === activeTab[movie.id]
+                                  )
+                                  ?.episodes.map((episode) => (
+                                    <li
+                                      className="flex items-center gap-3"
+                                      key={episode.id}
+                                    >
+                                      <div className="image-box flex-shrink-0">
+                                        <img
+                                          src={episode.bannerimg}
+                                          alt="image-icon"
+                                          className="img-fluid rounded"
+                                        />
+                                      </div>
+                                      <div className="image-details">
+                                        <h6 className="mb-1 capitalize">
+                                          <span className="text-primary text-[#3EE783]">
+                                            E{episode.id}
+                                          </span>{" "}
+                                          - {episode.title}
+                                        </h6>
+                                        <small>{episode.duration}</small>
+                                      </div>
+                                    </li>
+                                  ))}
                               </ul>
-                            </div> 
-                          
+                            </div>
                           </div>
                         </div>
                       </div>
