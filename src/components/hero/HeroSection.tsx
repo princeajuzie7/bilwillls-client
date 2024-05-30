@@ -268,7 +268,7 @@ export function HeroSection() {
                                 href="/streamit/react/frontend/cast-detail"
                               >
                                 {" "}
-                                Caleb Deschannelr
+                                Caleb Deschannel
                               </a>
                             </div>
                           </div>
