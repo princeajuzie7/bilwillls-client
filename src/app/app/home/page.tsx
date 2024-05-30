@@ -18,7 +18,7 @@ export default function Page() {
       <div>
         <OnlyonBilwills />
       </div>
-      <div>
+      <div className="pb-[20px]">
         <TopMovie />
       </div>
       <AvatarGenerator />

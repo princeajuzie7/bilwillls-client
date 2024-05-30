@@ -1,9 +1,10 @@
 "use client";
 
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Swiper as SwiperClass } from "swiper";
+
 
 // Import Swiper styles
 import "swiper/css";
@@ -13,8 +14,8 @@ import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
 
 export function TopMovie() {
-  const firstSwiperRef = React.useRef<SwiperClass | null>(null);
-  const SecondSwiperRef = React.useRef<SwiperClass | null>(null);
+  const firstSwiperRef = React.useRef<SwiperClass | null>(null)
+  const SecondSwiperRef = React.useRef<SwiperClass | null>(null)
   const movies = [
     {
       title: "Movie 1",
@@ -52,51 +53,33 @@ export function TopMovie() {
         "https://templates.iqonic.design/streamit/react/frontend/assets/images/top-10/05.webp",
       id: 5,
     },
+  
+
   ];
 
+   const handleSlideChangeFirst = (swiper: SwiperCore) => {
+     if (
+       SecondSwiperRef?.current &&
+       SecondSwiperRef?.current?.realIndex !== swiper.realIndex
+     ) {
+       SecondSwiperRef?.current.slideTo(swiper.realIndex);
+     }
+   };
 
-  const [activemediascreen, setActiveMedia] = React.useState(false)
-
-  useEffect(() => {
-    const HandleResize = () => {
-      if (typeof window !== "undefined") {
-        if (activemediascreen && window.innerWidth >= 991) {
-         setActiveMedia(true)
-        }
-        setActiveMedia(false)
-      }
-    }
-
-    document.addEventListener("resize", HandleResize);
-
-    () => {
-      document.removeEventListener("resize", HandleResize)
-    }
-  }, [activemediascreen]);
-
-  const handleSlideChangeFirst = (swiper: SwiperCore) => {
-    if (
-      SecondSwiperRef?.current &&
-      SecondSwiperRef?.current?.realIndex !== swiper.realIndex
-    ) {
-      SecondSwiperRef?.current.slideTo(swiper.realIndex);
-    }
-  };
-
-  const handleSlideChangeSecond = (swiper: SwiperCore) => {
-    if (
-      firstSwiperRef?.current &&
-      firstSwiperRef?.current.realIndex !== swiper?.realIndex
-    ) {
-      firstSwiperRef?.current.slideTo(swiper?.realIndex);
-    }
-  };
+   const handleSlideChangeSecond = (swiper: SwiperCore) => {
+     if (
+       firstSwiperRef?.current &&
+       firstSwiperRef?.current.realIndex !== swiper?.realIndex
+     ) {
+       firstSwiperRef?.current.slideTo(swiper?.realIndex);
+     }
+   };
   return (
     <div className="   w-full px-0">
       <div className="verticle-slider pb-[6.25rem] px-0 pt-0">
         <div className="slider">
           <div className="flex items-start relative">
-            <div className="slider--col relative hidden lg:block">
+            <div className="slider--col relative ">
               <div className=" vertical-slider-prev swiper-button absolute z-10 left-0 right-0 my-0 mx-auto top-[-40px]  ">
                 <i>
                   <svg
@@ -117,7 +100,7 @@ export function TopMovie() {
                   </svg>
                 </i>
               </div>
-              <div className=" slider-thumbs hidden lg:block   ">
+              <div className=" hidden lg:block slider-thumbs   ">
                 <div className=" container w-full h-full overflow-hidden  ">
                   <Swiper
                     direction={"vertical"}
@@ -183,12 +166,12 @@ export function TopMovie() {
                 </i>
               </div>
             </div>
-            <div className="slider-images  lg:absolute  z-0 w-full lg:h-full h-auto ">
+            <div className="  absolute z-0 w-full lg:h-full h-auto ">
               <div className="w-full h-full overflow-hidden">
                 <Swiper
-                  direction={`${activemediascreen ? "horizontal" : "vertical"}`}
+                  direction={"vertical"}
                   slidesPerView={1}
-                  className=" lg:h-full h-[30rem]"
+                  className="h-[50em]"
                   navigation={{
                     prevEl: ".vertical-slider-prev",
                     nextEl: ".vertical-slider-next",
@@ -203,17 +186,17 @@ export function TopMovie() {
                 >
                   {movies.map((movie, index) => (
                     <SwiperSlide key={movie.id}>
-                      <div className="lg:relative lg:top-movieblock h-full w-full ">
+                      <div className="relative top-movieblock">
                         <div className="slider--image img-box">
                           <img
                             src={movie.imageUrl}
-                            className=" mix-blend-overlay max-w-full h-full w-full object-cover"
+                            className=" mix-blend-overlay  h-full w-full"
                             alt="X-Men"
                             loading="lazy"
                           />
                         </div>
                       </div>
-                      <div className="description">
+                      <div className="lg:absolute relative lg:top-[50%] lg:left-[33rem] lg:w-[30%] w-full lg:h-full  lg:description transform-none z-[99] lg:py-0 py-[3rem] lg:px-0 px-[2rem] h-[430px]  ">
                         <div className="block-description">
                           <ul className="flex flex-wrap items-center p-0 mb-1 pb-1 list-none movie-tag">
                             <li className="relative text-capitalize text-sm tracking-wider">
