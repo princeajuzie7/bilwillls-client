@@ -55,8 +55,8 @@ export function TopMovie() {
   ];
 
 
-  const [isHorizontal, setIsHorizontal] = useState(window.innerWidth < 991);
-
+  const [isHorizontal, setIsHorizontal] = useState( typeof window !== "undefined"  ?window.innerWidth < 991 : null );
+ 
    useEffect(() => {
      const handleResize = () => {
        if (typeof window !== 'undefined'){
