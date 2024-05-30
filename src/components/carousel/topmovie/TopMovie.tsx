@@ -59,14 +59,23 @@ export function TopMovie() {
 
    useEffect(() => {
      const handleResize = () => {
-       setIsHorizontal(window.innerWidth < 991);
+       if (typeof window !== 'undefined'){
+         
+         setIsHorizontal(window.innerWidth < 991);
+       }
      };
 
-     window.addEventListener("resize", handleResize);
+     if (typeof window !== 'undefined') { 
+       
+       window.addEventListener("resize", handleResize); 
+     }
      handleResize(); // Set initial state
 
      return () => {
-       window.removeEventListener("resize", handleResize);
+       if (typeof window !== 'undefined') { 
+         
+         window.removeEventListener("resize", handleResize);
+       }
      };
    }, []);
 
