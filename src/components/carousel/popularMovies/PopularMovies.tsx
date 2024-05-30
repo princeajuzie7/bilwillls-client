@@ -9,14 +9,14 @@ import "swiper/css"; // Add Swiper CSS
 import "swiper/css/navigation"; // Add Swiper Navigation CSS
 
 SwiperCore.use([Navigation]);
-export function OnlyonBilwills() {
+export function PopularMovies() {
   // Array of movie data
   const movies = [
     {
       title: "Movie 1",
       duration: "60 of 134 m",
       imageUrl:
-        "https://templates.iqonic.design/streamit/react/frontend/assets/images/movies/related/01.webp",
+        "	https://templates.iqonic.design/streamit/react/frontend/assets/images/movies/popular/01.webp",
       id: 1,
     },
 
@@ -24,35 +24,35 @@ export function OnlyonBilwills() {
       title: "Movie 2",
       duration: "45 of 120 m",
       imageUrl:
-        "https://templates.iqonic.design/streamit/react/frontend/assets/images/movies/related/02.webp",
+        "	https://templates.iqonic.design/streamit/react/frontend/assets/images/movies/popular/02.webp",
       id: 2,
     },
     {
       title: "Movie 3",
       duration: "30 of 90 m",
       imageUrl:
-        "https://templates.iqonic.design/streamit/react/frontend/assets/images/movies/related/03.webp",
+        "	https://templates.iqonic.design/streamit/react/frontend/assets/images/movies/popular/03.webp",
       id: 3,
     },
     {
       title: "Movie 4",
       duration: "70 of 140 m",
       imageUrl:
-        "https://templates.iqonic.design/streamit/react/frontend/assets/images/movies/related/04.webp",
+        "https://templates.iqonic.design/streamit/react/frontend/assets/images/movies/popular/04.webp",
       id: 4,
     },
     {
       title: "Movie 5",
       duration: "20 of 60 m",
       imageUrl:
-        "https://templates.iqonic.design/streamit/react/frontend/assets/images/movies/related/05.webp",
+        "https://templates.iqonic.design/streamit/react/frontend/assets/images/movies/popular/05.webp",
       id: 5,
     },
     {
       title: "Movie 6",
       duration: "50 of 110 m",
       imageUrl:
-        "https://templates.iqonic.design/streamit/react/frontend/assets/images/movies/related/06.webp",
+            "https://templates.iqonic.design/streamit/react/frontend/assets/images/movies/popular/06.webp",
       id: 6,
     },
     {
@@ -94,7 +94,7 @@ export function OnlyonBilwills() {
   if (!isMounted) {
     return null; // or a loading spinner, or placeholder content
   }
- 
+
   const scaleupanimate = false;
 
   const handleclick = (e: Event | any) => {
@@ -108,7 +108,7 @@ export function OnlyonBilwills() {
         }  `}
       >
         <div className="flex items-center justify-between md:px-7 px-2 lg:mb-[-120px] mb-[-90px]">
-          <h5 className="main-title text-capitalize mb-0">Only on Bilwills</h5>
+          <h5 className="main-title text-capitalize mb-0">Popular Movies</h5>
           <a
             className="text-primary iq-view-all text-decoration-none text-[#3EE783]"
             href="/streamit/react/frontend/view-all"
@@ -387,4 +387,4 @@ export function OnlyonBilwills() {
   );
 }
 
-export default OnlyonBilwills;
+export default PopularMovies;
