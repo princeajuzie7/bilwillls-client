@@ -53,23 +53,7 @@ export function HeroSection() {
       <div className="relative flex  justify-end  lg:h-screen h-[32.125rem;]">
         <div className="relative my-auto hidden lg:block">
           <div className=" custom-hero-bg w-[38em] relative mt-[74px]  pt-9 pb-9 pl-9 pr-0 right-0 z-10 ">
-            {/* <h1 className=" text-white">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, non
-              tempore culpa ullam suscipit architecto. Doloribus iste odit vitae
-              culpa! Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Inventore consectetur illum fuga animi provident doloremque minima
-              ullam ex unde sint! Lorem ipsum dolor sit, amet consectetur
-              adipisicing elit. Eveniet officiis nemo saepe sunt sapiente
-              molestias distinctio dolore hic quasi sequi. Lorem ipsum dolor sit
-              amet consectetur adipisicing elit. Aliquid, eveniet. Doloremque
-              hic, officia, modi perspiciatis et illo soluta inventore quibusdam
-              omnis optio quo quisquam dolorem, facilis voluptatum non porro
-              labore asperiores tempora officiis ut adipisci voluptates quas
-              repudiandae dicta? Doloremque animi harum officia tempora. Nobis
-              ratione id voluptatem nihil iure! Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. Alias non laborum veniam officia
-              blanditiis neque ut quia eos itaque sed!{" "}
-            </h1> */}
+   
 
             <div className="relative pb-[3.4375rem]">
               <Swiper

@@ -18,6 +18,7 @@ export function Top10Movies() {
       imageUrl:
         "https://templates.iqonic.design/streamit/react/frontend/assets/images/top-ten-number/01.webp",
       id: 1,
+      
     },
 
     {
