@@ -250,8 +250,11 @@ export function Top10Series() {
     },
   ];
 
-  let [activetab, setactivebar] = React.useState(1)
+  let [activetab, setactivebar] = React.useState<number >(1)
   
+  const ativeepisode = movies.map((m) => m.seasons.map((seasons) => {
+    return seasons.season
+  }))
   const handlenavigate = (params: number) => {
    setactivebar(params);
  }
@@ -371,59 +374,36 @@ export function Top10Series() {
                     {/* <div className="col-md-1 col-lg-2 col-xxl-3"></div> */}
                     <div className="w-full md:w-6/12 lg:w-5/12 xl:w-4/12 mt-5 md:mt-0">
                       <div className="tab-block">
-                        <h4 className="tab-title capitalize mb-0 text-[1.777rem]">
+                        <h4 className="tab-title capitalize mb-2 text-[1.777rem] ">
                           All Episode
                         </h4>
                         <div className="tab-bottom-bordered border-0 trending-custom-tab">
                           <div
-                            className="nav nav-tabs nav-pills mb-3  nav-pills flex items-center flex-nowrap overflow-x-auto overflow-y-hidden text-center"
+                            className="nav nav-tabs nav-pills mb-3   nav-pills flex items-center flex-nowrap overflow-x-auto overflow-y-hidden text-center"
                             role="tablist"
                           >
-                            <div className="nav-item">
-                              <a
-                                role="tab"
-                                data-rr-ui-event-key="0season"
-                                id="left-tabs-example-tab-0season"
-                                aria-controls="left-tabs-example-tabpane-0season"
-                                aria-selected="true"
-                                className="nav-link active"
-                                tabIndex={0}
-                                href="#"
-                              >
-                                season 1
-                              </a>
-                            </div>
-                            <div className="nav-item">
-                              <a
-                                role="tab"
-                                data-rr-ui-event-key="1season"
-                                id="left-tabs-example-tab-1season"
-                                aria-controls="left-tabs-example-tabpane-1season"
-                                aria-selected="false"
-                                tabIndex={-1}
-                                className="nav-link"
-                                href="#"
-                              >
-                                season 2
-                              </a>
-                            </div>
-                            <div className="nav-item">
-                              <a
-                                role="tab"
-                                data-rr-ui-event-key="2season"
-                                id="left-tabs-example-tab-2season"
-                                aria-controls="left-tabs-example-tabpane-2season"
-                                aria-selected="false"
-                                tabIndex={-1}
-                                className="nav-link"
-                                href="#"
-                              >
-                                season 3
-                              </a>
-                            </div>
+                            {movie.seasons.map((seasons, idx) => (
+                              <div className="nav-item" key={idx}>
+                                <div
+                                  role="tab"
+                                  data-rr-ui-event-key="0season"
+                                  id="left-tabs-example-tab-0season"
+                                  aria-controls="left-tabs-example-tabpane-0season"
+                                  aria-selected="true"
+                                  className="nav-link active"
+                                  tabIndex={0}
+                                
+                                  onClick={() => {
+                                    handlenavigate(seasons.season);
+                                  }}
+                                >
+                                  season {seasons.season}
+                                </div>
+                              </div>
+                            ))}
                           </div>
                           <div className="tab-content trending-content">
-                            <div
+                             <div
                               role="tabpanel"
                               id="left-tabs-example-tabpane-0season"
                               aria-labelledby="left-tabs-example-tab-0season"
@@ -495,7 +475,8 @@ export function Top10Series() {
                                   </div>
                                 </li>
                               </ul>
-                            </div>
+                            </div> 
+                          
                           </div>
                         </div>
                       </div>
