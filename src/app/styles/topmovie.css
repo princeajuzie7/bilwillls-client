@@ -199,6 +199,12 @@
     }
 }
 
+@media (max-width: 767px) {
+    .verticle-slider .slider-images .description .iq-title a {
+        font-size: 1.5615rem;
+    }
+}
+
 @media (max-width: 991px) {
     .verticle-slider .slider-images .description {
         display: flex;

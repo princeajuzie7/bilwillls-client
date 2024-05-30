@@ -10,7 +10,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 // import required modules
-import { Pagination  , EffectFade} from "swiper/modules";
+import { Pagination, EffectFade } from "swiper/modules";
 
 export function TopMovie() {
   const firstSwiperRef = React.useRef<SwiperClass | null>(null);
@@ -54,31 +54,28 @@ export function TopMovie() {
     },
   ];
 
+  const [isHorizontal, setIsHorizontal] = useState(
+    typeof window !== "undefined" ? window.innerWidth < 991 : null
+  );
 
-  const [isHorizontal, setIsHorizontal] = useState( typeof window !== "undefined"  ?window.innerWidth < 991 : null );
- 
-   useEffect(() => {
-     const handleResize = () => {
-       if (typeof window !== 'undefined'){
-         
-         setIsHorizontal(window.innerWidth < 991);
-       }
-     };
+  useEffect(() => {
+    const handleResize = () => {
+      if (typeof window !== "undefined") {
+        setIsHorizontal(window.innerWidth < 991);
+      }
+    };
 
-     if (typeof window !== 'undefined') { 
-       
-       window.addEventListener("resize", handleResize); 
-     }
-     handleResize(); // Set initial state
+    if (typeof window !== "undefined") {
+      window.addEventListener("resize", handleResize);
+    }
+    handleResize(); // Set initial state
 
-     return () => {
-       if (typeof window !== 'undefined') { 
-         
-         window.removeEventListener("resize", handleResize);
-       }
-     };
-   }, []);
-
+    return () => {
+      if (typeof window !== "undefined") {
+        window.removeEventListener("resize", handleResize);
+      }
+    };
+  }, []);
 
   const handleSlideChangeFirst = (swiper: SwiperCore) => {
     if (
@@ -299,9 +296,6 @@ export function TopMovie() {
                               className="btn bg-[#3EE783] text-uppercase relative text-[14px] leading-4 border-[#3ee783] border-[.063rem] px-8 py-4 rounded-sm flex flex-row-reverse w-fit items-center text-center justify-center gap-2 "
                               href="/streamit/react/frontend/movies-detail"
                             >
-                              <span className="button-text font-bold capitalize text-white">
-                                Play Now
-                              </span>
                               <svg
                                 width="15px"
                                 height="15px"
@@ -324,6 +318,9 @@ export function TopMovie() {
                                   />{" "}
                                 </g>
                               </svg>
+                              <span className="button-text font-bold capitalize text-white">
+                                Play Now
+                              </span>
                             </a>
                           </div>
                         </div>
