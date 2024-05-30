@@ -12,7 +12,7 @@
 .swiper-wrapper .swiper-slide {
     padding: 0 .9375rem;
 }
-@media (max-width: 1024px) {
+/* @media (max-width: 1024px) {
 .onlyon-bilwills-block-slider .swiper-wrapper {
    margin-top: 5rem !important;
     margin-bottom: 6.25rem;
@@ -23,7 +23,7 @@
    margin-top: 5rem !important;
     margin-bottom: 2rem;
 
-}
+} */
 
 .iq-card .block-images {
     backface-visibility: hidden;

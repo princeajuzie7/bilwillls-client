@@ -117,7 +117,7 @@ export function OnlyonBilwills() {
           </a>
         </div>
 
-        <div className="flex justify-center onlyon-bilwills-block-slider">
+        <div className="flex justify-center lg:py-20 py-10 ">
           <Swiper
             slidesPerView={6}
             spaceBetween={20}
