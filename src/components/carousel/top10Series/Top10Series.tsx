@@ -327,7 +327,7 @@ export function Top10Series() {
                           </a>
                           <h5 className="text-gold lg:text-[1.333rem] text-base">
                             <span className="text-primary text-[#3EE783]">
-                              #4
+                              #{movie.id}
                             </span>{" "}
                             in Series Yesterday
                           </h5>
@@ -385,7 +385,7 @@ export function Top10Series() {
                         <div className="tab-bottom-bordered border-0 trending-custom-tab">
                           <div
                             className="nav nav-tabs nav-pills mb-3   nav-pills flex items-center flex-nowrap overflow-x-auto overflow-y-hidden text-center"
-                            role="tablist"
+                    
                           >
                             {movie.seasons.map((seasons, idx) => (
                               <div
@@ -393,11 +393,7 @@ export function Top10Series() {
                                 key={idx}
                               >
                                 <div
-                                  role="tab"
-                                  data-rr-ui-event-key="0season"
-                                  id="left-tabs-example-tab-0season"
-                                  aria-controls="left-tabs-example-tabpane-0season"
-                                  aria-selected="true"
+                                
                                   className={
                                     activeTab[movie.id] === seasons.season
                                       ? "text-[#3EE783]"
@@ -419,9 +415,7 @@ export function Top10Series() {
                           "
                           >
                             <div
-                              role="tabpanel"
-                              id="left-tabs-example-tabpane-0season"
-                              aria-labelledby="left-tabs-example-tab-0season"
+                           
                               className="fade tab-pane active show"
                             >
                               <ul className="list-inline m-0 p-0">
