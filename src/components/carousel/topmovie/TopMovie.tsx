@@ -8,9 +8,9 @@ import SwiperCore, { Swiper as SwiperClass } from "swiper";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
-
+import "swiper/css/effect-fade";
 // import required modules
-import { Pagination } from "swiper/modules";
+import { Pagination  , EffectFade} from "swiper/modules";
 
 export function TopMovie() {
   const firstSwiperRef = React.useRef<SwiperClass | null>(null);
@@ -55,24 +55,21 @@ export function TopMovie() {
   ];
 
 
-  const [activemediascreen, setActiveMedia] = React.useState(false)
+  const [isHorizontal, setIsHorizontal] = useState(window.innerWidth < 991);
 
-  useEffect(() => {
-    const HandleResize = () => {
-      if (typeof window !== "undefined") {
-        if (activemediascreen && window.innerWidth >= 991) {
-         setActiveMedia(true)
-        }
-        setActiveMedia(false)
-      }
-    }
+   useEffect(() => {
+     const handleResize = () => {
+       setIsHorizontal(window.innerWidth < 991);
+     };
 
-    document.addEventListener("resize", HandleResize);
+     window.addEventListener("resize", handleResize);
+     handleResize(); // Set initial state
 
-    () => {
-      document.removeEventListener("resize", HandleResize)
-    }
-  }, [activemediascreen]);
+     return () => {
+       window.removeEventListener("resize", handleResize);
+     };
+   }, []);
+
 
   const handleSlideChangeFirst = (swiper: SwiperCore) => {
     if (
@@ -186,9 +183,9 @@ export function TopMovie() {
             <div className="slider-images  lg:absolute  z-0 w-full lg:h-full h-auto ">
               <div className="w-full h-full overflow-hidden">
                 <Swiper
-                  direction={`${activemediascreen ? "horizontal" : "vertical"}`}
+                  direction={isHorizontal ? "horizontal" : "vertical"}
                   slidesPerView={1}
-                  className=" lg:h-full h-[30rem]"
+                  className=" lg:h-full h-[25rem]"
                   navigation={{
                     prevEl: ".vertical-slider-prev",
                     nextEl: ".vertical-slider-next",
@@ -199,7 +196,8 @@ export function TopMovie() {
                   }}
                   loop={true}
                   onSlideChange={handleSlideChangeSecond}
-                  modules={[Pagination]}
+                  modules={[Pagination, EffectFade]}
+                  effect={isHorizontal ? "fade" : ""}
                 >
                   {movies.map((movie, index) => (
                     <SwiperSlide key={movie.id}>

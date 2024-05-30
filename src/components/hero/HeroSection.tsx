@@ -305,7 +305,7 @@ export function HeroSection() {
                             </svg>
                           </a>
                           <a
-                            className="btn bg-[#3EE783] text-uppercase relative text-[14px] leading-4 border-[#3ee783] border-[.063rem] px-6 py-[11px] rounded-sm flex flex-row-reverse w-fit items-center text-center justify-center gap-2 "
+                            className=" bg-[#3EE783]/50 text-uppercase relative text-[14px] leading-4 border-[#3ee783]/25 border-[.063rem] px-6 lg:py-[11px] py-2 rounded-sm flex  w-fit items-center text-center justify-center gap-2 "
                             href="/streamit/react/frontend/movies-detail"
                           >
                             <svg
