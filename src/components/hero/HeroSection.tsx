@@ -73,7 +73,6 @@ export function HeroSection() {
 
             <div className="relative pb-[3.4375rem]">
               <Swiper
-              
                 slidesPerView={2}
                 modules={[Navigation]}
                 onSwiper={(swiper) => {
@@ -153,8 +152,8 @@ export function HeroSection() {
         <div className="absolute z-0 w-full lg:h-full flex h-[32rem]">
           <Swiper
             slidesPerView={1}
-             effect={"fade"}
-            modules={[Navigation,EffectFade]}
+            effect={"fade"}
+            modules={[Navigation, EffectFade]}
             onSwiper={(swiper) => {
               secondSwiperRef.current = swiper;
               console.log("Second Swiper initialized", swiper);
@@ -279,7 +278,7 @@ export function HeroSection() {
                             className="btn bg-[#3EE783] text-uppercase relative text-[14px] leading-4 border-[#3ee783] border-[.063rem] px-6 py-4 rounded-sm flex flex-row-reverse w-fit items-center text-center justify-center gap-2 "
                             href="/streamit/react/frontend/movies-detail"
                           >
-                            <span className="button-text font-bold capitalize text-black">
+                            <span className="button-text font-bold capitalize">
                               Play
                             </span>
                             <svg
@@ -288,7 +287,7 @@ export function HeroSection() {
                               viewBox="0 0 24 24"
                               fill="none"
                               xmlns="http://www.w3.org/2000/svg"
-                              stroke="#000"
+                              stroke="#fff"
                             >
                               <g id="SVGRepo_bgCarrier" strokeWidth={0} />
                               <g
@@ -300,19 +299,15 @@ export function HeroSection() {
                                 {" "}
                                 <path
                                   d="M21.4086 9.35258C23.5305 10.5065 23.5305 13.4935 21.4086 14.6474L8.59662 21.6145C6.53435 22.736 4 21.2763 4 18.9671L4 5.0329C4 2.72368 6.53435 1.26402 8.59661 2.38548L21.4086 9.35258Z"
-                                  fill="#000"
+                                  fill="#fff"
                                 />{" "}
                               </g>
                             </svg>
                           </a>
                           <a
-                            className="btn  bg-white/35 text-uppercase relative text-[14px] leading-4  px-5 py-3 rounded-sm flex flex-row-reverse w-fit items-center text-center justify-center gap-2 "
+                            className="btn bg-[#3EE783] text-uppercase relative text-[14px] leading-4 border-[#3ee783] border-[.063rem] px-6 py-[11px] rounded-sm flex flex-row-reverse w-fit items-center text-center justify-center gap-2 "
                             href="/streamit/react/frontend/movies-detail"
                           >
-                            <span className="button-text font-bold capitalize">
-                              More Info
-                            </span>
-
                             <svg
                               width="25px"
                               height="25px"
@@ -339,6 +334,10 @@ export function HeroSection() {
                                 fill="white"
                               />
                             </svg>
+                            <span className="button-text font-bold capitalize">
+                              More Info
+                            </span>
+                         
                           </a>
                         </div>
                       </div>
