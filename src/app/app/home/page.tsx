@@ -1,7 +1,8 @@
 import React from "react";
-import { HeroSection } from "@/components";
+import { Footer, HeroSection } from "@/components";
 import AvatarGenerator from "@/components/test/Avatar";
-import { ContinueWatching, Top10Movies, OnlyonBilwills, TopMovie, PopularMovies, Top10Series } from "@/components/carousel";
+import { ContinueWatching, Top10Movies, OnlyonBilwills, TopMovie, PopularMovies, Top10Series, RecommendedForYou, TopPicsForYou } from "@/components/carousel";
+import { MovieGenreCarousel } from "@/components/genere";
 export default function Page() {
   return (
     <div >
@@ -27,10 +28,18 @@ export default function Page() {
       <div>
         <Top10Series /> 
       </div>
-      <AvatarGenerator />
       <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum at fugiat odit rerum accusamus alias quasi reprehenderit quis, nesciunt velit.
+        <MovieGenreCarousel />
       </div>
+      <div>
+        <RecommendedForYou />
+      </div>
+
+      <div className="">
+        <TopPicsForYou />
+      </div>
+        
+      <Footer />
     </div>
   );
 }

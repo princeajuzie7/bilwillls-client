@@ -1,0 +1,1 @@
+export * from "@/components/genere/moviegenerecarousel/MovieGenreCarousel";

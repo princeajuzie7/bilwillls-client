@@ -267,35 +267,7 @@ export function Top10Series() {
  
   return (
     <div className="tab-slider">
-      {/* <div>
-        <ul className="flex items-center justify-center gap-2">
-          <li
-            onClick={() => {
-              handlenavigate(1);
-            }}
-          >
-            home
-          </li>
-          <li
-            onClick={() => {
-              handlenavigate(2);
-            }}
-          >
-            about us
-          </li>
-          <li
-            onClick={() => {
-              handlenavigate(3);
-            }}
-          >
-            contact
-          </li>
-        </ul>
 
-        {activetab === 1 ? <h1>home content</h1> : ""}
-        {activetab === 2 ? <h1>about content</h1> : ""}
-        {activetab === 3 ? <h1>contact content</h1> : ""}
-      </div> */}
       <div className="slider">
         <Swiper
           spaceBetween={1}
@@ -313,7 +285,7 @@ export function Top10Series() {
               </div>
 
               <div className="relative w-full">
-                <div className="container-fluid lg:px-[6.25em] px-0">
+                <div className="container-fluid lg:px-[2.95em] px-0">
                   <div className=" flex flex-wrap justify-between items-center min-h-screen h-full my-4">
                     <div className="w-full md:w-5/12 lg:w-5/12 xl:w-5/12">
                       <div className="tab-left-details">

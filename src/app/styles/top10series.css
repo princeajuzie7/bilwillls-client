@@ -154,13 +154,13 @@
         line-height: 1.5rem
     }
 
-    .swiper-button.swiper-button-next {
+    /* .swiper-button.swiper-button-next {
         right: .4687rem
     }
 
     .swiper-button.swiper-button-prev {
         left: .4687rem
-    }
+    } */
 
     .swiper-button:after {
         font-size: .6875rem
