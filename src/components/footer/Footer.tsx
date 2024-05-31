@@ -24,7 +24,7 @@ export  function Footer() {
               </div>
               <p className="mb-4 text-sm">
                 Email us:{" "}
-                <span className="text-white">customer@streamit.com</span>
+                <span className="text-white">customer@bilwills.com</span>
               </p>
               <p className="text-uppercase tracking-widest text-sm mb-1">
                 customer services
