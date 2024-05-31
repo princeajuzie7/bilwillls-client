@@ -1,0 +1,119 @@
+footer .footer-menu>li {
+    position: relative
+}
+
+footer .footer-menu>li a {
+    color: #D1D0CF;
+    font-size: .875rem;
+    transition: all .5s ease-in-out;
+    text-transform: capitalize
+}
+
+footer .footer-menu>li a:hover {
+    color: #3EE783
+}
+
+
+footer .menu {
+    margin-bottom: .9375rem
+}
+
+/* footer .menu li {
+    
+margin-right: 1.875rem
+} */
+footer .menu li a {
+    color: #D1D0CF;
+    font-size: .875rem
+}
+
+footer .menu li a:hover {
+    color: #3EE783
+}
+
+footer .menu li:last-child {
+    margin-right: 0
+}
+
+.footer-default {
+    background: #141314;
+}
+
+.footer-default .footer-logo {
+    margin-bottom: 2.5rem
+}
+
+.footer-default .footer-link-title {
+    font-size: 1.125rem;
+    text-transform: capitalize;
+    font-weight: 500;
+    color: var(--bs-heading-color);
+    margin-bottom: 1.1875rem
+}
+
+.footer-default .footer-top {
+    padding: 5.625rem 0
+}
+
+.footer-default .footer-top .contact {
+    font-size: 1.25rem;
+    font-weight: 600
+}
+
+.footer-default .footer-bottom {
+    padding: 3.125em 0
+}
+
+/* footer .footer-menu>li:before {
+    content: "";
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #3EE783;
+    font-size: .625rem;
+} */
+
+.mailchimp .form-control {
+    background: #D1D0CF;
+    border-top-left-radius: .1875rem;
+    border-bottom-left-radius: .1875rem
+}
+
+.mailchimp.mailchimp-dark .form-control {
+    background: var(--bs-body-bg)
+}
+
+.mailchimp .iq-button .btn {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    height: 100%;
+    padding-top: 0;
+    padding-bottom: 0
+}
+
+.footer-merchandise {
+    background: var(--bs-gray-900)
+}
+
+.footer-merchandise .footer-inner {
+    padding: 7.375rem 0 6.5rem;
+    height: 100%
+}
+
+@media (max-width: 991.98px) {
+    .footer-merchandise .footer-top {
+        padding:4.375rem 0
+    }
+
+    .footer-merchandise .footer-inner {
+        padding: 0
+    }
+}
+
+@media (max-width: 767.98px) {
+    .footer-default .footer-top,.footer-default .footer-bottom {
+        padding:2rem 0
+    }
+}
