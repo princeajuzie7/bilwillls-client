@@ -82,15 +82,18 @@ footer .menu li:last-child {
 }
 
 .mailchimp.mailchimp-dark .form-control {
-    background: var(--bs-body-bg)
+    background: #000;
+    padding-inline: 12px;
+    padding-block: 8px;
 }
+
 
 .mailchimp .iq-button .btn {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
     height: 100%;
-    padding-top: 0;
-    padding-bottom: 0
+    padding-inline: 30px;
+    padding-block: 17px;
 }
 
 .footer-merchandise {
@@ -117,3 +120,13 @@ footer .menu li:last-child {
         padding:2rem 0
     }
 }
+
+
+
+.input-group-sm>.form-control,.input-group-sm>.form-select,.input-group-sm>.input-group-text,.input-group-sm>.btn {
+    padding: .5rem;
+    font-size: .875rem;
+    border-radius: #3EE783;
+}
+
+

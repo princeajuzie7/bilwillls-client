@@ -5,10 +5,10 @@ import Logo from "@/resources/svg/logo.svg";
 export  function Footer() {
   return (
     <footer className="footer footer-default">
-      <div className="container-fluid px-[6.25em]">
+      <div className="container-fluid lg:px-[2.25em] px-4 lg:pb-0 pb-10">
         <div className="footer-top">
-          <div className="flex items-center justify-between flex-wrap mt-[1.25rem] lg:mx-[1.25rem] mx-1  w-full">
-            <div className="mb-5 lg:mb-0 xl:w-1/4 lg:w-1/2">
+          <div className="flex items-center flex-wrap  justify-between  mt-[1.25rem]  mx-1  w-full">
+            <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 px-4 mb-4">
               <div className="footer-logo">
                 <div className="logo-default">
                   <a className=" flex-none text-xl " href="#">
@@ -31,7 +31,7 @@ export  function Footer() {
               </p>
               <p className="mb-0 contact text-white">+ (480) 555-0103</p>
             </div>
-            <div className="mb-5 lg:mb-0 ">
+            <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 px-4 mb-4">
               <h4 className="footer-link-title">Quick Links</h4>
               <ul className="list-none footer-menu">
                 <li className="mb-3 flex items-center gap-1 text-center">
@@ -120,7 +120,7 @@ export  function Footer() {
                 </li>
               </ul>
             </div>
-            <div className="mb-5 mb-lg-0 col-xl-2 col-lg-6">
+            <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 px-4 mb-4">
               <h4 className="footer-link-title">Movies to watch</h4>
               <ul className="list-none footer-menu">
                 <li className="mb-3 flex items-center gap-1 text-center">
@@ -188,7 +188,7 @@ export  function Footer() {
                 </li>
               </ul>
             </div>
-            <div className="mb-5 mb-lg-0 col-xl-2 col-lg-6">
+            <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 px-4 mb-4">
               <h4 className="footer-link-title">About company</h4>
               <ul className="list-none footer-menu">
                 <li className="mb-3 flex items-center gap-1 text-center">
@@ -256,59 +256,12 @@ export  function Footer() {
                 </li>
               </ul>
             </div>
-            <div className="col-xl-3 col-lg-6">
-              <h4 className="footer-link-title">Subscribe Newsletter</h4>
-              <div className="mailchimp mailchimp-dark">
-                <div className="input-group mb-3 mt-4">
-                  <input
-                    type="text"
-                    className="form-control mb-0 text-sm"
-                    placeholder="Email*"
-                    aria-describedby="button-addon2"
-                  />
-                  <div className="iq-button">
-                    <button
-                      type="submit"
-                      className="btn btn-sm"
-                      id="button-addon2"
-                    >
-                      Subscribe
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div className="d-flex items-center mt-5">
-                <span className="text-sm mr-2">Follow Us:</span>
-                <ul className="p-0 m-0 list-none flex space-x-2">
-                  <li>
-                    <a className="relative" href="https://www.facebook.com/">
-                      <i className="fab fa-facebook"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a className="relative" href="https://twitter.com/">
-                      <i className="fab fa-twitter"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a className="relative" href="https://github.com/">
-                      <i className="fab fa-github"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a className="relative" href="https://www.instagram.com/">
-                      <i className="fab fa-instagram"></i>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
           </div>
         </div>
         <div className="footer-bottom border-t">
-          <div className="flex items-center">
-            <div className="col-md-6">
-              <ul className="menu list-inline p-0 flex flex-wrap items-center">
+          <div className="flex items-center flex-wrap  justify-between  ">
+            <div className="  lg:w-[50%] w-full ">
+              <ul className="menu list-inline p-0 flex flex-wrap items-center gap-2">
                 <li className="menu-item">
                   <a href="/streamit/react/frontend/terms-of-use">
                     {" "}
@@ -328,18 +281,18 @@ export  function Footer() {
                   <a href="/streamit/react/frontend/playlist"> Watch List</a>
                 </li>
               </ul>
-              <p className="text-sm">
+              <p className="text-sm mb-2">
                 © <span className="currentYear">2024</span>{" "}
-                <span className="text-primary">BILWILLS</span>. All Rights
-                Reserved. All videos and shows on this platform are trademarks
-                of, and all related images and content are the property of,
-                Streamit Inc. Duplication and copy of this is strictly
-                prohibited. All rights reserved.
+                <span className="text-primary text-[#3EE783]">BILWILLS</span>.
+                All Rights Reserved. All videos and shows on this platform are
+                trademarks of, and all related images and content are the
+                property of, Streamit Inc. Duplication and copy of this is
+                strictly prohibited. All rights reserved.
               </p>
             </div>
             <div className="col-md-3"></div>
             <div className="col-md-3">
-              <h6 className="text-sm pb-1">Download Streamit Apps</h6>
+              <h6 className="text-sm pb-2">Download Bilwills Apps</h6>
               <div className="flex items-center">
                 <a className="app-image" href="/streamit/react/frontend">
                   <img
