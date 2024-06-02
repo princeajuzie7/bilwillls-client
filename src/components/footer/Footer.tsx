@@ -5,7 +5,7 @@ import Logo from "@/resources/svg/logo.svg";
 export  function Footer() {
   return (
     <footer className="footer footer-default">
-      <div className="container-fluid lg:px-[2.25em] px-4 lg:pb-0 pb-10">
+      <div className="container-fluid lg:px-[3.25em] px-4 lg:pb-0 pb-10">
         <div className="footer-top">
           <div className="flex items-center flex-wrap  justify-between  mt-[1.25rem]  mx-1  w-full">
             <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 px-4 mb-4">
