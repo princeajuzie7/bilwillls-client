@@ -19,6 +19,12 @@ body {
   font-family: 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+input[type='checkbox'] {
+    accent-color: #3EE783;
+}
+/* .custom-checkbox:checked {
+  background-color: #3EE783;
+} */
 
 /* scroll bar track  */
 
