@@ -9,7 +9,8 @@ import "@/app/styles/Footer.css";
 import "@/app/font/googlefont.css";
 import "@/app/styles/top10series.css";
 import { PrelineScript } from "@/lib";
-
+import { TanstackProvider } from "@/lib"
+import StoreProvider from "@/store/StoreProvider";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -23,9 +24,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body >
-        <PrelineScript />
-        {children}
+      <body>
+        <StoreProvider>
+          <TanstackProvider>
+            <PrelineScript />
+            {children}
+          </TanstackProvider>
+       </StoreProvider>
       </body>
     </html>
   );
