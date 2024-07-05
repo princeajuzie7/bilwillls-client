@@ -105,27 +105,7 @@ const Page = () => {
    
   };
 
-  const GoogleSign = async () => {
-    console.log('google button clicked')
-   
-  
 
-    try {
-
-      window.location.href = "http://localhost:8000/client/api/auth/google";
-    
-      //  const googleLoginUrl =;
-      //  const newWindow = window.open(
-      //    googleLoginUrl,
-      //    "_blank",
-      //    "width=500, height=600"
-      //  );
-
-     
-    } catch (error) {
-      console.log("error", error);
-    }
-  }
   return (
     <main className="flex items-center justify-center">
       <SnackbarProvider

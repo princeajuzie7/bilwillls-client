@@ -1,15 +1,10 @@
-"use client"
-import React from 'react'
-import { useRouter } from 'next/navigation';
-
-export default function Page() {
-
-  const router = useRouter()
+"use client";
+import Image from "next/image";
+import React from "react";
+import { redirect } from "next/navigation";
+export default function Home() {
   React.useEffect(() => {
-  router.push('/app/home')
-},[router])
-  return (
-    <div>hello world</div>
-  )
+    redirect("/app/home");
+  }, []);
+  return <></>;
 }
-

@@ -17,6 +17,11 @@ export const selectUser = createSelector(
 )
 
 
+export const selectGlobalLoading = createSelector(
+  [selectAuthState],
+  (auth)=> auth.globalLoading
+)
+
 export const selectError = createSelector(
   [selectAuthState],
   (auth) => auth.error

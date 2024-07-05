@@ -25,5 +25,17 @@ export interface AuthState {
   isAuthenticated: boolean;
   navigatetoverify: boolean;
   loading: boolean;
+  globalLoading: boolean;
   error: string | null;
 }
+
+export interface UpdatePasswordInt {
+  password: string;
+  confirmpassword: string;
+  token?: string | null;
+}
+
+export interface ForgotPasswordInt{
+  email: string;
+}
+

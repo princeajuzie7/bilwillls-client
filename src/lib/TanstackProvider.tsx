@@ -8,13 +8,13 @@ import RingLoader from "react-spinners/RingLoader";
 import { GetCurrentUserRequest } from "@/saga/AuthSaga";
 import {
   selectIsAuthenticated,
-  selectLoading,
+  selectGlobalLoading,
   selectUser,
 } from "@/selectors/AuthSelectors";
 export  function TanstackProvider({children}: {children: React.ReactNode}) {
     const client = new QueryClient();
     const dispatch = useDispatch<AppDispatch>()
-     const loading = useSelector(selectLoading);
+     const loading = useSelector(selectGlobalLoading);
     React.useEffect(() => {
       dispatch(GetCurrentUserRequest());
     }, [dispatch]);
@@ -24,8 +24,9 @@ export  function TanstackProvider({children}: {children: React.ReactNode}) {
       <div className="flex justify-center items-center h-screen w-full">
         <RingLoader color="#3EE783" size={50} />
       </div>
-    );
+    )
   }
+  
     return (
         <QueryClientProvider client={client}>
             <ReactQueryDevtools initialIsOpen={false} />
