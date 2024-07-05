@@ -1,22 +1,30 @@
 "use client";
 import React from "react";
 import Link from "next/link";
-import { AuthInterface, RegexInterface, RegexError } from "@/types";
+import { AuthInterface, RegexInterface, RegexError, UpdatePasswordInt } from "@/types";
 import { EMAIL_REGEX, PASSWORD_REGEX, apiResponse } from "@/utils";
 import { SnackbarProvider, enqueueSnackbar, closeSnackbar } from "notistack";
 import { useSearchParams } from "next/navigation";
+import { UseAppDispatch } from "@/hooks";
+import { UpdatePasswordRequest } from "@/saga/AuthSaga";
+import { useRouter } from "next/navigation"
+import { selectLoading, selectnavigatetoverify } from "@/selectors/AuthSelectors";
+import { useSelector } from "react-redux";
 
 export function UpdateComponent() {
   const params = useSearchParams();
+  const router = useRouter()
   const token = params.get("token");
+  const loading = useSelector(selectLoading)
   // const email = params.get("email");
-  const [formData, setFormdata] = React.useState<AuthInterface>({
+  const dispatch = UseAppDispatch()
+  const [formData, setFormdata] = React.useState<UpdatePasswordInt>({
     password: "",
     confirmpassword: "",
     token: token,
   });
 
-  const [loading, setLoading] = React.useState<boolean>(false);
+  // const [loading, setLoading] = React.useState<boolean>(false);
 
   const [errorMsg, seterrorMsg] = React.useState({
     password: "",
@@ -51,6 +59,41 @@ export function UpdateComponent() {
     (field) => !errorMsg[field as keyof typeof errorMsg]
   );
 
+  
+
+  React.useEffect(() => {
+    const verifyEmail = async () => {
+      try {
+        // setLoading(true);
+        const response = await apiResponse.post(
+          `auth/verifypasswordresetoken`,
+          {
+            token: token,
+          }
+        );
+
+        const data = response.data;
+
+        if (response.status === 200) {
+          console.log("data", data);
+          
+        
+          return;
+        } else {
+          
+          router.push('/auth/signup')
+        }
+
+      } catch (error: any) {
+        console.log(error);
+       
+      
+      }
+    };
+
+    verifyEmail();
+  }, [token, router]);
+
   const HandleSubmit = async (Event: React.FormEvent<HTMLFormElement>) => {
     Event.preventDefault();
 
@@ -62,86 +105,8 @@ export function UpdateComponent() {
     // const response = await apiResponse.post("/auth/signup", formData);
 
     // const data = response.data;
+    dispatch(UpdatePasswordRequest(formData));
 
-    console.log(formData);
-
-    setLoading(true);
-    try {
-      const response = await apiResponse.post("auth/updatepassword", formData);
-      const responsedata = response?.data?.message;
-      console.log(response.data);
-      if (response.status === 200) {
-        enqueueSnackbar(`${responsedata}`, {
-          variant: "success",
-          autoHideDuration: 3000,
-          anchorOrigin: {
-            vertical: "bottom",
-            horizontal: "center",
-          },
-
-          action: (key) => (
-            <button onClick={() => closeSnackbar(key)}>
-              {" "}
-              <svg
-                width="1em"
-                height="1em"
-                viewBox="0 0 24 24"
-                className=""
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M21 21l-9-9m0 0L3 3m9 9l9-9m-9 9l-9 9"
-                  stroke="#fff"
-                  strokeWidth={2}
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </button>
-          ),
-        });
-        setLoading(false);
-      }
-    } catch (error: any) {
-      setLoading(false);
-      console.log(error);
-      const errorresponsehtml = error?.response?.data;
-
-      const start = errorresponsehtml.indexOf("Error: ") + "Error: ".length;
-      const end = errorresponsehtml.indexOf("<br>");
-      const errorMessage = errorresponsehtml.substring(start, end).trim();
-      enqueueSnackbar(errorMessage, {
-        variant: "error",
-        autoHideDuration: 3000,
-        anchorOrigin: {
-          vertical: "bottom",
-          horizontal: "center",
-        },
-
-        action: (key) => (
-          <button onClick={() => closeSnackbar(key)}>
-            {" "}
-            <svg
-              width="1em"
-              height="1em"
-              viewBox="0 0 24 24"
-              className=""
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M21 21l-9-9m0 0L3 3m9 9l9-9m-9 9l-9 9"
-                stroke="#fff"
-                strokeWidth={2}
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </button>
-        ),
-      });
-    }
   };
   return (
     <main className="flex items-center justify-center">

@@ -1,15 +1,22 @@
 "use client";
 import React from "react";
 import Link from "next/link";
-import { AuthInterface, RegexInterface, RegexError } from "@/types";
+import {
+  AuthInterface,
+  RegexInterface,
+  RegexError,
+  ForgotPasswordInt,
+} from "@/types";
 import { EMAIL_REGEX, PASSWORD_REGEX, apiResponse } from "@/utils";
 import { SnackbarProvider, enqueueSnackbar, closeSnackbar } from "notistack";
+import { useDispatch, useSelector } from "react-redux";
+import { ForgotPasswordRequest } from "@/saga/AuthSaga";
+import { selectLoading } from "@/selectors/AuthSelectors";
 export default function Page() {
-  const [FormData, setFormData] = React.useState<AuthInterface>({
+  const [FormData, setFormData] = React.useState<ForgotPasswordInt>({
     email: "",
   });
 
-  const [loading, setLoading] = React.useState<boolean>(false);
   const [Errormsg, setErrormsg] = React.useState<RegexError>({
     email: "",
   });
@@ -22,9 +29,10 @@ export default function Page() {
       [name]: value,
     });
   };
-
+  const dispatch = useDispatch();
+  const loading = useSelector(selectLoading);
   function SignuValidate(Regexprops: RegexInterface): void {
-    // Check if the value matches the regular expression pattern
+    // Check if the value matches the regular expression pattern w
     if (!Regexprops.regex.test(Regexprops.value)) {
       // If validation fails, update error message for the input field
       setErrormsg((prevs: RegexError) => ({
@@ -48,86 +56,8 @@ export default function Page() {
     event
   ) => {
     event.preventDefault();
-    setLoading(true);
-    console.log("FormData", FormData);
-    try {
-      const response = await apiResponse.post("auth/forgotpassword", FormData);
-     const message  = response.data?.message
-      console.log(response.data);
-      if (response.status === 200) {
-        enqueueSnackbar(`${message}`, {
-          variant: "success",
-          autoHideDuration: 3000,
-          anchorOrigin: {
-            vertical: "bottom",
-            horizontal: "center",
-          },
 
-          action: (key) => (
-            <button onClick={() => closeSnackbar(key)}>
-              {" "}
-              <svg
-                width="1em"
-                height="1em"
-                viewBox="0 0 24 24"
-                className=""
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M21 21l-9-9m0 0L3 3m9 9l9-9m-9 9l-9 9"
-                  stroke="#fff"
-                  strokeWidth={2}
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </button>
-          ),
-        });
-        setLoading(false);
-    
-      }
-    } catch (error: any) {
-      setLoading(false);
-      console.log(error);
-      const errorresponsehtml = error?.response?.data;
-     
-      const start = errorresponsehtml.indexOf("Error: ") + "Error: ".length;
-      const end = errorresponsehtml.indexOf("<br>");
-      const errorMessage = errorresponsehtml.substring(start, end).trim();
-      console.log(errorMessage);
-      enqueueSnackbar(errorMessage, {
-        variant: "error",
-        autoHideDuration: 3000,
-        anchorOrigin: {
-          vertical: "bottom",
-          horizontal: "center",
-        },
-
-        action: (key) => (
-          <button onClick={() => closeSnackbar(key)}>
-            {" "}
-            <svg
-              width="1em"
-              height="1em"
-              viewBox="0 0 24 24"
-              className=""
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M21 21l-9-9m0 0L3 3m9 9l9-9m-9 9l-9 9"
-                stroke="#fff"
-                strokeWidth={2}
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </button>
-        ),
-      });
-    }
+    dispatch(ForgotPasswordRequest(FormData));
   };
   return (
     <main className="flex items-center justify-center">

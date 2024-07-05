@@ -1,7 +1,15 @@
 "use client"
 import React from 'react'
 import { Navbar, BottomNav } from "@/components";
-export default function layout({children}: {children: React.ReactNode}) {
+import { useSelector } from 'react-redux';
+import { selectIsAuthenticated } from '@/selectors/AuthSelectors';
+import { useRouter } from 'next/navigation';
+
+import Signedhoc from '@/helper/Signedhoc';
+
+  function layout({ children }: { children: React.ReactNode }) {
+
+
   return (
     <div>
       <div className="w-full">
@@ -14,3 +22,7 @@ export default function layout({children}: {children: React.ReactNode}) {
     </div>
   );
 }
+
+const LayoutSignedIn = Signedhoc(layout);
+
+export default LayoutSignedIn;

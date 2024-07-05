@@ -3,11 +3,11 @@ import React from "react";
 import { useSearchParams } from "next/navigation";
 import { redirect } from "next/navigation";
 import { apiResponse } from "@/utils";
-import HashLoader from "react-spinners/HashLoader";
+import RingLoader from "react-spinners/RingLoader";
 import { useRouter } from "next/navigation";
 export function VerifyPaasowrdTokenComp() {
-  const { get } = useSearchParams();
-  const token = get("token");
+  const searchparams= useSearchParams();
+  const token = searchparams.get("token");
 
   const [loading, setLoading] = React.useState(false);
   const [verifymeesage, setverifymessage] = React.useState(false);
@@ -51,14 +51,11 @@ export function VerifyPaasowrdTokenComp() {
     verifyEmail();
   }, [token, router]);
   return (
-    <div>
+    <div className="h-screen w-full">
       {loading ? (
         <div className="flex justify-center items-center">
-          <HashLoader
-            color="#2563EB"
-            size={50}
-            style={{ width: "100px", height: "100px" }}
-          />
+         
+          <RingLoader color="#3EE783" size={50} />
         </div>
       ) : verifymeesage ? (
         <p className="text-2xl text-green-500 text-center justify-center items-center">
