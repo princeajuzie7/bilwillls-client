@@ -1,8 +1,8 @@
-"use client"
-import React from 'react';
-import Image from 'next/image';
+"use client";
+import React from "react";
+import Image from "next/image";
 import Logo from "@/resources/svg/logo.svg";
-export  function Footer() {
+export function Footer() {
   return (
     <footer className="footer footer-default">
       <div className="container-fluid lg:px-[3.25em] px-4 lg:pb-0 pb-10">
@@ -296,7 +296,7 @@ export  function Footer() {
               <div className="flex items-center">
                 <a className="app-image" href="/streamit/react/frontend">
                   <img
-                    src="https://templates.iqonic.design/streamit/react/frontend/assets/images/footer/google-play.webp"
+                    src="https://templates.iqonic.design/streamit-dist/frontend/react/assets/images/footer/google-play.webp"
                     loading="lazy"
                     alt="play-store"
                   />
@@ -304,7 +304,7 @@ export  function Footer() {
                 <br />
                 <a className="ml-3 app-image" href="/streamit/react/frontend">
                   <img
-                    src="https://templates.iqonic.design/streamit/react/frontend/assets/images/footer/apple.webp"
+                    src="https://templates.iqonic.design/streamit-dist/frontend/react/assets/images/footer/apple.webp"
                     loading="lazy"
                     alt="app-store"
                   />

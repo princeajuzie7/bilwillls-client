@@ -1,6 +1,6 @@
-"use client"
-import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
+"use client";
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 export function MovieGenreCarousel() {
   const GeneresValue = [
@@ -8,46 +8,46 @@ export function MovieGenreCarousel() {
       id: 1,
       name: "Action",
       image:
-        "https://templates.iqonic.design/streamit/react/frontend/assets/images/genre/01.webp",
+        "https://templates.iqonic.design/streamit-dist/frontend/react/assets/images/genre/01.webp",
     },
     {
       id: 2,
       name: "Adventure",
       image:
-        "https://templates.iqonic.design/streamit/react/frontend/assets/images/genre/02.webp",
+        "https://templates.iqonic.design/streamit-dist/frontend/react/assets/images/genre/02.webp",
     },
     {
       id: 3,
       name: "Animation",
       image:
-        "https://templates.iqonic.design/streamit/react/frontend/assets/images/genre/03.webp",
+        "https://templates.iqonic.design/streamit-dist/frontend/react/assets/images/genre/03.webp",
     },
 
     {
       id: 4,
       name: "Comedy",
       image:
-        "https://templates.iqonic.design/streamit/react/frontend/assets/images/genre/04.webp",
+        "https://templates.iqonic.design/streamit-dist/frontend/react/assets/images/genre/04.webp",
     },
 
     {
       id: 5,
       name: "Crime",
       image:
-        "https://templates.iqonic.design/streamit/react/frontend/assets/images/genre/05.webp",
+        "https://templates.iqonic.design/streamit-dist/frontend/react/assets/images/genre/05.webp",
     },
 
     {
       id: 6,
       name: "Documentary",
       image:
-        "https://templates.iqonic.design/streamit/react/frontend/assets/images/genre/06.webp",
+        "https://templates.iqonic.design/streamit-dist/frontend/react/assets/images/genre/06.webp",
     },
 
     {
       id: 7,
       image:
-        "https://templates.iqonic.design/streamit/react/frontend/assets/images/genre/07.webp",
+        "https://templates.iqonic.design/streamit-dist/frontend/react/assets/images/genre/07.webp",
     },
   ];
   return (
@@ -92,7 +92,6 @@ export function MovieGenreCarousel() {
                   spaceBetween: 0,
                 },
               }}
-           
             >
               {GeneresValue.map((item) => (
                 <SwiperSlide key={item.id}>

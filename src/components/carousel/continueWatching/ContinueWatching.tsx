@@ -5,8 +5,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore from "swiper/core";
 // import { Navigation } from "swiper/react";
 import { Navigation } from "swiper/modules";
-import 'swiper/css'; // Add Swiper CSS
-import 'swiper/css/navigation'; // Add Swiper Navigation CSS
+import "swiper/css"; // Add Swiper CSS
+import "swiper/css/navigation"; // Add Swiper Navigation CSS
 
 SwiperCore.use([Navigation]);
 export function ContinueWatching() {
@@ -16,61 +16,61 @@ export function ContinueWatching() {
       title: "Movie 1",
       duration: "60 of 134 m",
       imageUrl:
-        "	https://templates.iqonic.design/streamit/react/frontend/assets/images/continue-watch/01.webp",
+        "	https://templates.iqonic.design/streamit-dist/frontend/react/assets/images/continue-watch/01.webp",
     },
     {
       title: "Movie 2",
       duration: "45 of 120 m",
       imageUrl:
-        "https://templates.iqonic.design/streamit/react/frontend/assets/images/continue-watch/02.webp",
+        "https://templates.iqonic.design/streamit-dist/frontend/react/assets/images/continue-watch/02.webp",
     },
     {
       title: "Movie 3",
       duration: "30 of 90 m",
       imageUrl:
-        "https://templates.iqonic.design/streamit/react/frontend/assets/images/continue-watch/03.webp",
+        "https://templates.iqonic.design/streamit-dist/frontend/react/assets/images/continue-watch/03.webp",
     },
     {
       title: "Movie 4",
       duration: "70 of 140 m",
       imageUrl:
-        "https://templates.iqonic.design/streamit/react/frontend/assets/images/continue-watch/04.webp",
+        "https://templates.iqonic.design/streamit-dist/frontend/react/assets/images/continue-watch/04.webp",
     },
     {
       title: "Movie 5",
       duration: "20 of 60 m",
       imageUrl:
-        "https://templates.iqonic.design/streamit/react/frontend/assets/images/continue-watch/05.webp",
+        "https://templates.iqonic.design/streamit-dist/frontend/react/assets/images/continue-watch/05.webp",
     },
     {
       title: "Movie 6",
       duration: "50 of 110 m",
       imageUrl:
-        "https://templates.iqonic.design/streamit/react/frontend/assets/images/continue-watch/03.webp",
+        "https://templates.iqonic.design/streamit-dist/frontend/react/assets/images/continue-watch/03.webp",
     },
     {
       title: "Movie 7",
       duration: "40 of 100 m",
       imageUrl:
-        "https://templates.iqonic.design/streamit/react/frontend/assets/images/continue-watch/03.webp",
+        "https://templates.iqonic.design/streamit-dist/frontend/react/assets/images/continue-watch/03.webp",
     },
     {
       title: "Movie 8",
       duration: "55 of 130 m",
       imageUrl:
-        "https://templates.iqonic.design/streamit/react/frontend/assets/images/continue-watch/03.webp",
+        "https://templates.iqonic.design/streamit-dist/frontend/react/assets/images/continue-watch/03.webp",
     },
     {
       title: "Movie 9",
       duration: "35 of 95 m",
       imageUrl:
-        "https://templates.iqonic.design/streamit/react/frontend/assets/images/continue-watch/03.webp",
+        "https://templates.iqonic.design/streamit-dist/frontend/react/assets/images/continue-watch/03.webp",
     },
     {
       title: "Movie 10",
       duration: "25 of 70 m",
       imageUrl:
-        "https://templates.iqonic.design/streamit/react/frontend/assets/images/continue-watch/03.webp",
+        "https://templates.iqonic.design/streamit-dist/frontend/react/assets/images/continue-watch/03.webp",
     },
   ];
 
@@ -80,16 +80,13 @@ export function ContinueWatching() {
     setIsMounted(true);
   }, []);
 
-
-
-    if (!isMounted) {
-      return null; // or a loading spinner, or placeholder content
-    }
-
-  
-  const handleclick = (e: Event | any) => {
-    e?.stopPropagation()
+  if (!isMounted) {
+    return null; // or a loading spinner, or placeholder content
   }
+
+  const handleclick = (e: Event | any) => {
+    e?.stopPropagation();
+  };
   return (
     <div className=" lg:pt-24 pt-2 flex items-center justify-center px-4  lg:px-16 ">
       <div className=" overflow-hidden">
