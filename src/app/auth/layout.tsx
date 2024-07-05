@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
-// import NotSignedhoc from "@/helper/hoc/notSignedhoc";
-function Layout({ children }: { children: React.ReactNode }) {
+import NotSignedhoc from "@/helper/NotSignedhoc";
+function layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="z-10">
       <main>
@@ -11,4 +11,5 @@ function Layout({ children }: { children: React.ReactNode }) {
   );
 }
 
+const Layout = NotSignedhoc(layout)
 export default Layout;

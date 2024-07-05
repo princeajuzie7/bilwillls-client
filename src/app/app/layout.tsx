@@ -5,15 +5,10 @@ import { useSelector } from 'react-redux';
 import { selectIsAuthenticated } from '@/selectors/AuthSelectors';
 import { useRouter } from 'next/navigation';
 
-export default function Layout({ children }: { children: React.ReactNode }) {
-  const isauthenticated = useSelector(selectIsAuthenticated)
-const router = useRouter()
-  React.useEffect(() => {
-    if (!isauthenticated) {
-      router.push('/auth/signin') // Redirect to login page if not authenticated
-    }
-    return
-  },[router, isauthenticated])
+import Signedhoc from '@/helper/Signedhoc';
+
+  function layout({ children }: { children: React.ReactNode }) {
+
 
   return (
     <div>
@@ -27,3 +22,7 @@ const router = useRouter()
     </div>
   );
 }
+
+const LayoutSignedIn = Signedhoc(layout);
+
+export default LayoutSignedIn;

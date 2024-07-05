@@ -144,11 +144,13 @@ function* getActiveUserSaga() {
     yield put(setGlobalLoading(true));
     const user: AuthInterface = yield call(AuthServices.getActiveUser);
     yield put(setUser(user));
+    
   } catch (error: any) {
     yield put(setError(error));
   } finally {
+      yield put(setGlobalLoading(false));
     yield put(setLoading(false));
-    yield put(setGlobalLoading(false))
+  
   }
 }
 
