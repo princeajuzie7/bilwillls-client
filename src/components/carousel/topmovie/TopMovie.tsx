@@ -20,7 +20,7 @@ export function TopMovie() {
       title: "Movie 1",
       duration: "60 of 134 m",
       imageUrl:
-        "https://templates.iqonic.design/streamit/react/frontend/assets/images/top-10/01.webp",
+        "https://templates.iqonic.design/streamit-dist/frontend/react/assets/images/top-10/01.webp",
       id: 1,
     },
 
@@ -28,28 +28,28 @@ export function TopMovie() {
       title: "Movie 2",
       duration: "45 of 120 m",
       imageUrl:
-        "https://templates.iqonic.design/streamit/react/frontend/assets/images/top-10/02.webp",
+        "https://templates.iqonic.design/streamit-dist/frontend/react/assets/images/top-10/02.webp",
       id: 2,
     },
     {
       title: "Movie 3",
       duration: "30 of 90 m",
       imageUrl:
-        "https://templates.iqonic.design/streamit/react/frontend/assets/images/top-10/03.webp",
+        "https://templates.iqonic.design/streamit-dist/frontend/react/assets/images/top-10/03.webp",
       id: 3,
     },
     {
       title: "Movie 4",
       duration: "70 of 140 m",
       imageUrl:
-        "https://templates.iqonic.design/streamit/react/frontend/assets/images/top-10/04.webp",
+        "https://templates.iqonic.design/streamit-dist/frontend/react/assets/images/top-10/04.webp",
       id: 4,
     },
     {
       title: "Movie 5",
       duration: "20 of 60 m",
       imageUrl:
-        "https://templates.iqonic.design/streamit/react/frontend/assets/images/top-10/05.webp",
+        "https://templates.iqonic.design/streamit-dist/frontend/react/assets/images/top-10/05.webp",
       id: 5,
     },
   ];

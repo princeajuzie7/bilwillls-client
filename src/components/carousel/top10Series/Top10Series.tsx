@@ -8,7 +8,7 @@ export function Top10Series() {
       title: "The Hunter",
 
       imageUrl:
-        "https://templates.iqonic.design/streamit/react/frontend/assets/images/tab-slider/01.webp",
+        "https://templates.iqonic.design/streamit-dist/frontend/react/assets/images/tab-slider/01.webp",
       id: 1,
       seasons: [
         {
@@ -18,7 +18,7 @@ export function Top10Series() {
               episode: 1,
               title: "Fire And Blood",
               bannerimg:
-                "https://templates.iqonic.design/streamit/react/frontend/assets/images/tv-show/season/01.webp",
+                "https://templates.iqonic.design/streamit-dist/frontend/react/assets/images/tv-show/season/01.webp",
               id: 1,
               duration: "45 minutes",
             },
@@ -26,7 +26,7 @@ export function Top10Series() {
               episode: 2,
               title: "The Pointy Endr",
               bannerimg:
-                "https://templates.iqonic.design/streamit/react/frontend/assets/images/tv-show/season/03.webp",
+                "https://templates.iqonic.design/streamit-dist/frontend/react/assets/images/tv-show/season/03.webp",
               id: 2,
               duration: "45 minutes",
             },
@@ -34,7 +34,7 @@ export function Top10Series() {
               episode: 3,
               title: "You Win or Die",
               bannerimg:
-                "https://templates.iqonic.design/streamit/react/frontend/assets/images/tv-show/season/04.webp",
+                "https://templates.iqonic.design/streamit-dist/frontend/react/assets/images/tv-show/season/04.webp",
               id: 3,
               duration: "45 minutes",
             },
@@ -42,7 +42,7 @@ export function Top10Series() {
               episode: 4,
               title: "The Black Queen",
               bannerimg:
-                "https://templates.iqonic.design/streamit/react/frontend/assets/images/tv-show/season/05.webp",
+                "https://templates.iqonic.design/streamit-dist/frontend/react/assets/images/tv-show/season/05.webp",
               id: 4,
               duration: "45 minutes",
             },
@@ -55,7 +55,7 @@ export function Top10Series() {
               episode: 1,
               title: "Valar Morghulis",
               bannerimg:
-                "https://templates.iqonic.design/streamit/react/frontend/assets/images/tv-show/season/05.webp",
+                "https://templates.iqonic.design/streamit-dist/frontend/react/assets/images/tv-show/season/05.webp",
               id: 1,
               duration: "45 minutes",
             },
@@ -63,7 +63,7 @@ export function Top10Series() {
               episode: 2,
               title: "Black Water",
               bannerimg:
-                "https://templates.iqonic.design/streamit/react/frontend/assets/images/tv-show/season/06.webp",
+                "https://templates.iqonic.design/streamit-dist/frontend/react/assets/images/tv-show/season/06.webp",
               id: 2,
               duration: "45 minutes",
             },
@@ -71,7 +71,7 @@ export function Top10Series() {
               episode: 3,
               title: "The Ghost Harrenrial",
               bannerimg:
-                "https://templates.iqonic.design/streamit/react/frontend/assets/images/tv-show/season/07.webp",
+                "https://templates.iqonic.design/streamit-dist/frontend/react/assets/images/tv-show/season/07.webp",
               id: 3,
               duration: "45 minutes",
             },
@@ -79,7 +79,7 @@ export function Top10Series() {
               episode: 4,
               title: "Garden of Bones",
               bannerimg:
-                "https://templates.iqonic.design/streamit/react/frontend/assets/images/tv-show/season/08.webp",
+                "https://templates.iqonic.design/streamit-dist/frontend/react/assets/images/tv-show/season/08.webp",
               id: 4,
               duration: "45 minutes",
             },
@@ -92,7 +92,7 @@ export function Top10Series() {
               episode: 1,
               title: "Mhysa",
               bannerimg:
-                "https://templates.iqonic.design/streamit/react/frontend/assets/images/tv-show/season/09.webp",
+                "https://templates.iqonic.design/streamit-dist/frontend/react/assets/images/tv-show/season/09.webp",
               id: 1,
               duration: "45 minutes",
             },
@@ -100,7 +100,7 @@ export function Top10Series() {
               episode: 2,
               title: "Second Sons",
               bannerimg:
-                "https://templates.iqonic.design/streamit/react/frontend/assets/images/tv-show/season/10.webp",
+                "https://templates.iqonic.design/streamit-dist/frontend/react/assets/images/tv-show/season/10.webp",
               id: 2,
               duration: "45 minutes",
             },
@@ -108,7 +108,7 @@ export function Top10Series() {
               episode: 3,
               title: "The Climb",
               bannerimg:
-                "https://templates.iqonic.design/streamit/react/frontend/assets/images/tv-show/season/11.webp",
+                "https://templates.iqonic.design/streamit-dist/frontend/react/assets/images/tv-show/season/11.webp",
               id: 3,
               duration: "45 minutes",
             },
@@ -116,7 +116,7 @@ export function Top10Series() {
               episode: 4,
               title: "Kissed by Fire",
               bannerimg:
-                "https://templates.iqonic.design/streamit/react/frontend/assets/images/tv-show/season/12.webp",
+                "https://templates.iqonic.design/streamit-dist/frontend/react/assets/images/tv-show/season/12.webp",
               id: 4,
               duration: "45 minutes",
             },
@@ -130,7 +130,7 @@ export function Top10Series() {
     {
       title: "Pirates of Dayones",
       imageUrl:
-        "	https://templates.iqonic.design/streamit/react/frontend/assets/images/tab-slider/02.webp",
+        "	https://templates.iqonic.design/streamit-dist/frontend/react/assets/images/tab-slider/02.webp",
       id: 2,
       seasons: [
         {
@@ -140,7 +140,7 @@ export function Top10Series() {
               episode: 1,
               title: "The Curse of the black Pearls",
               bannerimg:
-                "https://templates.iqonic.design/streamit/react/frontend/assets/images/tv-show/season/13.webp",
+                "https://templates.iqonic.design/streamit-dist/frontend/react/assets/images/tv-show/season/13.webp",
               id: 1,
               duration: "45 minutes",
             },
@@ -148,7 +148,7 @@ export function Top10Series() {
               episode: 2,
               title: "Dead Man's Chest",
               bannerimg:
-                "https://templates.iqonic.design/streamit/react/frontend/assets/images/tv-show/season/14.webp",
+                "https://templates.iqonic.design/streamit-dist/frontend/react/assets/images/tv-show/season/14.webp",
               id: 2,
               duration: "45 minutes",
             },
@@ -156,7 +156,7 @@ export function Top10Series() {
               episode: 3,
               title: "At World's End",
               bannerimg:
-                "https://templates.iqonic.design/streamit/react/frontend/assets/images/tv-show/season/15.webp",
+                "https://templates.iqonic.design/streamit-dist/frontend/react/assets/images/tv-show/season/15.webp",
               id: 3,
               duration: "45 minutes",
             },
@@ -164,7 +164,7 @@ export function Top10Series() {
               episode: 4,
               title: "On Stranger Tides",
               bannerimg:
-                "https://templates.iqonic.design/streamit/react/frontend/assets/images/tv-show/season/16.webp",
+                "https://templates.iqonic.design/streamit-dist/frontend/react/assets/images/tv-show/season/16.webp",
               id: 4,
               duration: "45 minutes",
             },
@@ -177,7 +177,7 @@ export function Top10Series() {
               episode: 1,
               title: "Valar Morghulis",
               bannerimg:
-                "https://templates.iqonic.design/streamit/react/frontend/assets/images/tv-show/season/17.webp",
+                "https://templates.iqonic.design/streamit-dist/frontend/react/assets/images/tv-show/season/17.webp",
               id: 1,
               duration: "45 minutes",
             },
@@ -185,7 +185,7 @@ export function Top10Series() {
               episode: 2,
               title: "Black Water",
               bannerimg:
-                "https://templates.iqonic.design/streamit/react/frontend/assets/images/tv-show/season/18.webp",
+                "https://templates.iqonic.design/streamit-dist/frontend/react/assets/images/tv-show/season/18.webp",
               id: 2,
               duration: "45 minutes",
             },
@@ -193,7 +193,7 @@ export function Top10Series() {
               episode: 3,
               title: "The Ghost Harrenrial",
               bannerimg:
-                "https://templates.iqonic.design/streamit/react/frontend/assets/images/tv-show/season/19.webp",
+                "https://templates.iqonic.design/streamit-dist/frontend/react/assets/images/tv-show/season/19.webp",
               id: 3,
               duration: "45 minutes",
             },
@@ -201,7 +201,7 @@ export function Top10Series() {
               episode: 4,
               title: "Garden of Bones",
               bannerimg:
-                "https://templates.iqonic.design/streamit/react/frontend/assets/images/tv-show/season/20.webp",
+                "https://templates.iqonic.design/streamit-dist/frontend/react/assets/images/tv-show/season/20.webp",
               id: 4,
               duration: "45 minutes",
             },
@@ -214,7 +214,7 @@ export function Top10Series() {
               episode: 1,
               title: "Mhysa",
               bannerimg:
-                "https://templates.iqonic.design/streamit/react/frontend/assets/images/tv-show/season/21.webp",
+                "https://templates.iqonic.design/streamit-dist/frontend/react/assets/images/tv-show/season/21.webp",
               id: 1,
               duration: "45 minutes",
             },
@@ -222,7 +222,7 @@ export function Top10Series() {
               episode: 2,
               title: "Second Sons",
               bannerimg:
-                "https://templates.iqonic.design/streamit/react/frontend/assets/images/tv-show/season/22.webp",
+                "https://templates.iqonic.design/streamit-dist/frontend/react/assets/images/tv-show/season/22.webp",
               id: 2,
               duration: "45 minutes",
             },
@@ -230,7 +230,7 @@ export function Top10Series() {
               episode: 3,
               title: "The Climb",
               bannerimg:
-                "https://templates.iqonic.design/streamit/react/frontend/assets/images/tv-show/season/23.webp",
+                "https://templates.iqonic.design/streamit-dist/frontend/react/assets/images/tv-show/season/23.webp",
               id: 3,
               duration: "45 minutes",
             },
@@ -238,7 +238,7 @@ export function Top10Series() {
               episode: 4,
               title: "Kissed by Fire",
               bannerimg:
-                "https://templates.iqonic.design/streamit/react/frontend/assets/images/tv-show/season/24.webp",
+                "https://templates.iqonic.design/streamit-dist/frontend/react/assets/images/tv-show/season/24.webp",
               id: 4,
               duration: "45 minutes",
             },
@@ -250,24 +250,22 @@ export function Top10Series() {
     },
   ];
 
-  
- const [activeTab, setActiveTab] = React.useState<{ [key: number]: number }>(
-   movies.reduce((acc, movie) => {
-     acc[movie.id] = movie.seasons[0].season;
-     return acc;
-   }, {} as { [key: number]: number })
- );
+  const [activeTab, setActiveTab] = React.useState<{ [key: number]: number }>(
+    movies.reduce((acc, movie) => {
+      acc[movie.id] = movie.seasons[0].season;
+      return acc;
+    }, {} as { [key: number]: number })
+  );
 
- const handleNavigate = (movieId: number, season: number) => {
-   setActiveTab((prevTabs) => ({
-     ...prevTabs,
-     [movieId]: season,
-   }));
+  const handleNavigate = (movieId: number, season: number) => {
+    setActiveTab((prevTabs) => ({
+      ...prevTabs,
+      [movieId]: season,
+    }));
   };
- 
+
   return (
     <div className="tab-slider">
-
       <div className="slider">
         <Swiper
           spaceBetween={1}
@@ -292,7 +290,7 @@ export function Top10Series() {
                         <div className="flex items-center gap-3 mb-4">
                           <a href="/streamit/react/frontend">
                             <img
-                              src="https://templates.iqonic.design/streamit/react/frontend/assets/images/movies/trending-label.webp"
+                              src="https://templates.iqonic.design/streamit-dist/frontend/react/assets/images/movies/trending-label.webp"
                               className="img-fluid"
                               alt=""
                             />
@@ -355,17 +353,13 @@ export function Top10Series() {
                           All Episode
                         </h4>
                         <div className="tab-bottom-bordered border-0 trending-custom-tab">
-                          <div
-                            className="nav nav-tabs nav-pills mb-3   nav-pills flex items-center flex-nowrap overflow-x-auto overflow-y-hidden text-center"
-                    
-                          >
+                          <div className="nav nav-tabs nav-pills mb-3   nav-pills flex items-center flex-nowrap overflow-x-auto overflow-y-hidden text-center">
                             {movie.seasons.map((seasons, idx) => (
                               <div
                                 className="nav-item cursor-pointer"
                                 key={idx}
                               >
                                 <div
-                                
                                   className={
                                     activeTab[movie.id] === seasons.season
                                       ? "text-[#3EE783]"
@@ -386,10 +380,7 @@ export function Top10Series() {
                             className="tab-content trending-content
                           "
                           >
-                            <div
-                           
-                              className="fade tab-pane active show"
-                            >
+                            <div className="fade tab-pane active show">
                               <ul className="list-inline m-0 p-0">
                                 {movie.seasons
                                   .find(
