@@ -40,15 +40,18 @@ interface UpdatePasswordAction{
 }
 
 function* SignUpSaga(action: LoginAction) {
+  
   try {
     yield put(setLoading(true));
     const user: AuthInterface = yield call(AuthServices.signup, action.payload);
-    yield put(setUser(user));
+   
      yield setTimeout(() => {
        put(setNavigatetoverify(true));
      }, 3000);
 
-    
+    if(typeof window !== "undefined"){
+     window.location.href = "/auth/signin"
+    }
   } catch (error: any) {
     yield put(setError(error));
     const errorresponsehtml = error?.response?.data;
@@ -95,7 +98,12 @@ function* SigninSaga(action: LoginAction) {
   try {
     yield put(setLoading(true));
     const user: AuthInterface = yield call(AuthServices.signIn, action.payload);
-    yield put(setUser(user));
+    // yield put(setUser(user));
+     if(typeof window !== "undefined"){
+     window.location.href = "/app/home"
+    }
+
+    
    
   } catch (error: any) {
     yield put(setError(error));
