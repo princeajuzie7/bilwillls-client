@@ -2369,6 +2369,11 @@ react-is@^16.13.1, react-is@^16.7.0:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
+react-live-island@^0.10.0:
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/react-live-island/-/react-live-island-0.10.0.tgz#60df02a08b099de5df38915e827da9c1eb3730a5"
+  integrity sha512-BAsCMxB3Z1qOLLO3ePJBsLfIh+CtgWHmWfUMkoNvChg9HaIUfWK5uk9uUJO6ZKyJRjQDkImMOoXwIC/Blf+sVA==
+
 react-query@^3.39.3:
   version "3.39.3"
   resolved "https://registry.yarnpkg.com/react-query/-/react-query-3.39.3.tgz#4cea7127c6c26bdea2de5fb63e51044330b03f35"
