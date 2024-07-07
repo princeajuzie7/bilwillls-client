@@ -50,6 +50,6 @@ input[type='checkbox'] {
 }
 
 
-
-
-
+.live-island-camera{
+  display: none;
+}

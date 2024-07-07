@@ -13,6 +13,7 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+
       keyframes: {
         sticky: {
           "0%": {
@@ -25,6 +26,9 @@ const config: Config = {
       },
       animation: {
         sticky: "sticky 1s",
+      },
+      screens: {
+        "smaller-than-sm": { max: "639px" },
       },
     },
   },

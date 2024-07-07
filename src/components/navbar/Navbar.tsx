@@ -7,6 +7,8 @@ export function Navbar() {
   
     const [isSticky, setIsSticky] = React.useState(false);
 
+
+
     React.useEffect(() => {
       function handleScroll() {
         const scroll = window.scrollY;
@@ -21,10 +23,8 @@ export function Navbar() {
 
   return (
     <header
-  className={`fixed w-full top-0 z-50 py-2 ${
-        isSticky
-          ? "shadow-custom animate-sticky bg-black/25 py-1"
-          : ""
+      className={`fixed w-full top-0 z-50 py-2 ${
+        isSticky ? "shadow-custom animate-sticky bg-black/25 py-1" : ""
       }`}
       style={{
         backdropFilter: isSticky ? "blur(10px)" : "none",
@@ -46,7 +46,8 @@ export function Navbar() {
         </a>
         <div
           id="navbar-alignment"
-          className="  overflow-hidden transition-all duration-300 hidden lg:block"
+          className="  overflow-hidden transition-all duration-300 block lg:block md:hidden sm:hidden smaller-than-sm:hidden"
+          // style={styles.container}
         >
           <div className="flex flex-col gap-5 mt-5 sm:flex-row sm:items-center sm:mt-0 sm:ps-5">
             <a
