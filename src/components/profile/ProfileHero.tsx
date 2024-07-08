@@ -2,7 +2,7 @@
 import React from "react";
 import LiveIsland from "react-live-island";
 import { SubscriptionEnum } from "@/enum";
-import { PlusIcon, LoveIcon} from "@/assets/icons";
+import { PlusIcon, LoveIcon, PlayIcon, FavIcon } from "@/assets/icons";
 import UserImg from "@/assets/images/user.jpg";
 import Image from "next/image";
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
@@ -119,7 +119,7 @@ export class ProfileHero extends React.Component<{}, ProfileHeroProps> {
         <TabPanel>
           <div>
             <div className="">
-              <div className="relative  h-auto w-auto bg-[#3EE783]/30 rounded-lg p-[2px]">
+              <div className="relative h-auto w-[350px] bg-[#292929] rounded-lg p-[2px]">
                 <div className="">
                   <div className="absolute flex text-center flex-col top-2  left-2">
                     <div className="rounded-full p-[8px] cursor-pointer flex item-center justify-center bg-black w-fit ">
@@ -139,23 +139,49 @@ export class ProfileHero extends React.Component<{}, ProfileHeroProps> {
                     }
                     height={200}
                     width={200}
-                    className="object-cover rounded-md w-[383px] h-[233px]"
+                    className="object-cover rounded-md w-[auto] h-[233px]"
                     loading="lazy"
                   />
                 </div>
 
-                <div>
+                <div className="pl-1">
                   <div>
-                    <h1 className="font-bold text-2xl">The Hunter</h1>
-                    <p className="text-base text-[#545453]">
+                    <h1 className="font-bold text-2xl pt-2 ">The Hunter</h1>
+                    <p className="text-sm text-[#545453] ">
                       PG-13 2hr 49min . Adventure, Drama, Sci-Fi
                     </p>
                   </div>
                   <div>
-                    <span>Summary</span>
-                    <p></p>
+                    <span className=" font-medium text-sm mb-2 ">Summary</span>
+                    <p className="text-[13px] text-[#545453]  w-full">
+                      {" "}
+                      Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                      Odit natus esse illo, obcaecati voluptatum doloribus quos
+                    </p>
                   </div>
-                  <div></div>
+                  <div className="w-full flex justify-between items-center my-3">
+                    <div>
+                      <button className="flex items-center text-center border-2 border-[#3EE783] px-2 rounded-sm">
+                        <PlayIcon
+                          height={20}
+                          width={20}
+                          color=""
+                          className="border-none"
+                          fill="#3EE783"
+                        />
+                        <p className="text-[#3EE783] text-sm">Watch Trailer</p>
+                      </button>
+                    </div>
+                    <div className="pr-3">
+                      <FavIcon
+                        height={25}
+                        width={25}
+                        color=""
+                        className="border-none cursor-pointer"
+                        fill="#3EE783"
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -175,7 +201,9 @@ export class ProfileHero extends React.Component<{}, ProfileHeroProps> {
 
   private TabHead() {
     return (
-      <TabList className={`flex items-center gap-4 mb-3 justify-center lg:justify-start `}>
+      <TabList
+        className={`flex items-center gap-4 mb-3 justify-center lg:justify-start `}
+      >
         <Tab className="data-[selected]:text-[#3EE783] data-[hover]:text-[#3EE783] outline-none font-semibold">
           Recently Watched
         </Tab>
@@ -190,7 +218,7 @@ export class ProfileHero extends React.Component<{}, ProfileHeroProps> {
     return (
       <TabGroup>
         {this.TabHead()}
-        <TabPanels className=" px-4 lg:px-0">
+        <TabPanels className=" px-4 lg:px-0 mb-7">
           {this.Recentlywatched()}
           {this.RenderLiked()}
         </TabPanels>
