@@ -114,7 +114,7 @@ export class ProfileHero extends React.Component<{}, ProfileHeroProps> {
 
   render(): React.ReactNode {
     return (
-      <div className="w-full mt-32 flex flex-col gap-2 items-center justify-center h-auto">
+      <div className="w-full mt-32 flex flex-col gap-2 items-center justify-center h-auto lg:px-0 px-5">
         <div>{this.Plan()}</div>
         <div>{this.User()}</div>
 
