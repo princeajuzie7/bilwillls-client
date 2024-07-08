@@ -2,9 +2,10 @@
 import React from "react";
 import LiveIsland from "react-live-island";
 import { SubscriptionEnum } from "@/enum";
-import { PlusIcon } from "@/assets/icons";
+import { PlusIcon, LoveIcon} from "@/assets/icons";
 import UserImg from "@/assets/images/user.jpg";
 import Image from "next/image";
+import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
 interface ProfileHeroProps {
   planType: SubscriptionEnum;
 }
@@ -112,13 +113,104 @@ export class ProfileHero extends React.Component<{}, ProfileHeroProps> {
     );
   }
 
+  private Recentlywatched() {
+    return (
+      <div>
+        <TabPanel>
+          <div>
+            <div className="">
+              <div className="relative  h-auto w-auto bg-[#3EE783]/30 rounded-lg p-[2px]">
+                <div className="">
+                  <div className="absolute flex text-center flex-col top-2  left-2">
+                    <div className="rounded-full p-[8px] cursor-pointer flex item-center justify-center bg-black w-fit ">
+                      <LoveIcon
+                        height={20}
+                        width={20}
+                        color=""
+                        fill="#3EE783"
+                      />
+                    </div>
+                    <span>21k</span>
+                  </div>
+                  <img
+                    alt="hello"
+                    src={
+                      "https://cinewaves.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fspider.4490e5f5.jpg&w=3840&q=75"
+                    }
+                    height={200}
+                    width={200}
+                    className="object-cover rounded-md w-[383px] h-[233px]"
+                    loading="lazy"
+                  />
+                </div>
+
+                <div>
+                  <div>
+                    <h1 className="font-bold text-2xl">The Hunter</h1>
+                    <p className="text-base text-[#545453]">
+                      PG-13 2hr 49min . Adventure, Drama, Sci-Fi
+                    </p>
+                  </div>
+                  <div>
+                    <span>Summary</span>
+                    <p></p>
+                  </div>
+                  <div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </TabPanel>
+      </div>
+    );
+  }
+
+  private RenderLiked() {
+    return (
+      <div>
+        <TabPanel>Content 2</TabPanel>
+      </div>
+    );
+  }
+
+  private TabHead() {
+    return (
+      <TabList className={`flex items-center gap-4 mb-3 justify-center lg:justify-start `}>
+        <Tab className="data-[selected]:text-[#3EE783] data-[hover]:text-[#3EE783] outline-none font-semibold">
+          Recently Watched
+        </Tab>
+        <Tab className="data-[selected]:text-[#3EE783] data-[hover]:text-[#3EE783] outline-none font-semibold">
+          Liked Movies
+        </Tab>
+      </TabList>
+    );
+  }
+
+  private RenderTabs() {
+    return (
+      <TabGroup>
+        {this.TabHead()}
+        <TabPanels className=" px-4 lg:px-0">
+          {this.Recentlywatched()}
+          {this.RenderLiked()}
+        </TabPanels>
+      </TabGroup>
+    );
+  }
   render(): React.ReactNode {
     return (
-      <div className="w-full mt-32 flex flex-col gap-2 items-center justify-center h-auto lg:px-0 px-5">
-        <div>{this.Plan()}</div>
-        <div>{this.User()}</div>
+      <div className="flex flex-col gap-5">
+        <div className="w-full mt-32 flex flex-col gap-2 items-center justify-center h-auto lg:px-0 px-5">
+          <div>{this.Plan()}</div>
+          <div>{this.User()}</div>
 
-        <div>{this.Option()}</div>
+          <div>{this.Option()}</div>
+        </div>
+
+        <div className="lg:pl-28 pl-0 flex lg:items-start items-center justify-center lg:justify-start ">
+          {" "}
+          {this.RenderTabs()}
+        </div>
       </div>
     );
   }
