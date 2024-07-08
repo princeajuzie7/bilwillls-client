@@ -5,4 +5,5 @@ export type IconType = {
     width: number;
     color: string;
     className?: string;
+    fill?: string;
 }

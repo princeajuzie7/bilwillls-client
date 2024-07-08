@@ -3,6 +3,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Logo from "@/resources/svg/logo.svg";
+import UserImg from "@/assets/images/user.jpg";
 export function Navbar() {
   
     const [isSticky, setIsSticky] = React.useState(false);
@@ -148,11 +149,21 @@ export function Navbar() {
                 </svg>
               </div>
             </div>
-            <img
-              className="inline-block size-8 rounded"
+            <Link href={'/app/dashboard/profile'}>
+            
+            <Image
+              src={UserImg}
+              height={200}
+              width={200}
+              alt="user image"
+              className="inline-block size-8 rounded object-cover cursor-pointer"
+            />
+            </Link>
+            {/* <img
+         
               src="https://i.pinimg.com/564x/1b/a2/e6/1ba2e6d1d4874546c70c91f1024e17fb.jpg"
               alt="Image Description"
-            />
+            /> */}
           </div>
         </div>
       </nav>
