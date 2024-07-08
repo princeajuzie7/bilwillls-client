@@ -6,23 +6,16 @@ import { PlusIcon } from "@/assets/icons";
 import UserImg from "@/assets/images/user.jpg";
 import Image from "next/image";
 interface ProfileHeroProps {
-
   planType: SubscriptionEnum;
 }
 export class ProfileHero extends React.Component<{}, ProfileHeroProps> {
-   
-
   constructor(props: {}) {
     super(props);
-    this.state = {planType:SubscriptionEnum.BASIC}; // Directly assign the enum value here
+    this.state = { planType: SubscriptionEnum.BASIC }; // Directly assign the enum value here
   }
 
-
-
-
   private async UpdatePlanOption(newplanoption: SubscriptionEnum) {
-     this.setState({ planType: newplanoption})
-    
+    this.setState({ planType: newplanoption });
   }
   private RenderPlanOption() {
     return Object.values(SubscriptionEnum).map((plan) => {
@@ -31,18 +24,16 @@ export class ProfileHero extends React.Component<{}, ProfileHeroProps> {
           key={plan}
           onClick={() => this.UpdatePlanOption(plan)}
           className={`cursor-pointer ${
-            plan === this.state.planType  ? "text-[#3EE783]" : ""
+            plan === this.state.planType ? "text-[#3EE783]" : ""
           }`}
         >
           {plan}
         </li>
       );
-    })
+    });
   }
-   
 
   private Plan() {
-   
     return (
       <div>
         <LiveIsland
@@ -55,13 +46,13 @@ export class ProfileHero extends React.Component<{}, ProfileHeroProps> {
         >
           {(isSmall) =>
             isSmall ? (
-              <p className="text-center text-[#3EE783]">{ this.state.planType}</p>
+              <p className="text-center text-[#3EE783]">
+                {this.state.planType}
+              </p>
             ) : (
               <div className="flex flex-col justify-center items-center gap-2 h-full">
-                <h1 >choose your Plan Type</h1>
-                <ul className="gap-4">
-                  {this.RenderPlanOption()}
-                </ul>
+                <h1>choose your Plan Type</h1>
+                <ul className="gap-4">{this.RenderPlanOption()}</ul>
               </div>
             )
           }
@@ -89,8 +80,8 @@ export class ProfileHero extends React.Component<{}, ProfileHeroProps> {
             className=" h-[149px] object-cover rounded-md w-[156px]"
           />
         </div>
-        <div className="text-center">
-          <h2 className=" font-bold text-2xl">Mark Poul</h2>
+        <div className="text-center ">
+          <h2 className=" font-bold text-2xl ">Mark Poul</h2>
           <span className="text-[#545453] text-base ">@markpaul01</span>
         </div>
       </div>
@@ -98,13 +89,33 @@ export class ProfileHero extends React.Component<{}, ProfileHeroProps> {
   }
 
   private Option() {
-    return <div></div>;
+    return (
+      <div className="flex flex-col gap-4">
+        <div className="flex  items-center gap-2">
+          <div className="flex flex-col items-center text-center  bg-[#191919] lg:px-8 px-5 rounded-lg py-1">
+            <h5 className="font-bold">21</h5>
+            <span className="text-[#545453] text-sm">Following</span>
+          </div>
+          <div className="flex flex-col items-center text-center  bg-[#191919] lg:px-8 px-5 rounded-lg py-1">
+            <h5 className="font-bold">18</h5>
+            <span className="text-[#545453] text-sm">Folllowers</span>
+          </div>
+          <div className="flex flex-col items-center text-center  bg-[#191919] lg:px-8 px-5 rounded-lg py-1">
+            <h5 className="font-bold">21</h5>
+            <span className="text-[#545453] text-sm">Liked Movies</span>
+          </div>
+        </div>
+        <div className="w-full bg-[#191919] px-4 py-2 text-center rounded-lg cursor-pointer">
+          <span className="text-[#545453]">Edit Profile</span>
+        </div>
+      </div>
+    );
   }
 
   render(): React.ReactNode {
     return (
-      <div className="w-full mt-32 flex items-center justify-center h-auto">
-        <div >{this.Plan()}</div>
+      <div className="w-full mt-32 flex flex-col gap-2 items-center justify-center h-auto">
+        <div>{this.Plan()}</div>
         <div>{this.User()}</div>
 
         <div>{this.Option()}</div>
