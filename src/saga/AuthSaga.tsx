@@ -99,9 +99,12 @@ function* SigninSaga(action: LoginAction) {
     yield put(setLoading(true));
     const user: AuthInterface = yield call(AuthServices.signIn, action.payload);
     // yield put(setUser(user));
-     if(typeof window !== "undefined"){
-     window.location.href = "/app/home"
-    }
+    setTimeout(() => {
+      
+      if(typeof window !== "undefined"){
+      window.location.href = "/app/home"
+     }
+    }, 2000);
 
     
    
