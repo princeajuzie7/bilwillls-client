@@ -98,7 +98,7 @@ function* SigninSaga(action: LoginAction) {
   try {
     yield put(setLoading(true));
     const user: AuthInterface = yield call(AuthServices.signIn, action.payload);
-    yield put(setUser(user));
+    // yield put(setUser(user));
     setTimeout(() => {
       
       if(typeof window !== "undefined"){

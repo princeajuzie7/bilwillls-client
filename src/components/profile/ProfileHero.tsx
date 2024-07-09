@@ -217,6 +217,7 @@ export class ProfileHero extends React.Component<{}, ProfileHeroProps> {
   private RenderTabs() {
     return (
       <TabGroup>
+        
         {this.TabHead()}
         <TabPanels className=" px-4 lg:px-0 mb-7">
           {this.Recentlywatched()}
@@ -237,6 +238,7 @@ export class ProfileHero extends React.Component<{}, ProfileHeroProps> {
 
         <div className="lg:pl-28 pl-0 flex lg:items-start items-center justify-center lg:justify-start ">
           {" "}
+          
           {this.RenderTabs()}
         </div>
       </div>
