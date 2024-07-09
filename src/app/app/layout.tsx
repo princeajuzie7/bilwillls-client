@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation';
 
 import Signedhoc from '@/helper/Signedhoc';
 
-  function layout({ children }: { children: React.ReactNode }) {
+  function Layout({ children }: { children: React.ReactNode }) {
 
 
   return (
@@ -23,6 +23,6 @@ import Signedhoc from '@/helper/Signedhoc';
   );
 }
 
-const LayoutSignedIn = Signedhoc(layout);
+// const LayoutSignedIn = Signedhoc(layout);
 
-export default LayoutSignedIn;
+export default Layout;

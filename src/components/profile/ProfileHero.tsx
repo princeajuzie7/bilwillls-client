@@ -149,7 +149,7 @@ export class ProfileHero extends React.Component<{}, ProfileHeroProps> {
 
   constructor(props: {}) {
     super(props);
-    this.state = { planType: SubscriptionEnum.BASIC }; // Directly assign the enum value here
+    this.state = { planType: SubscriptionEnum.PREMIUM }; // Directly assign the enum value here
   }
 
   private async UpdatePlanOption(newplanoption: SubscriptionEnum) {
@@ -482,7 +482,7 @@ export class ProfileHero extends React.Component<{}, ProfileHeroProps> {
           <div>{this.Option()}</div>
         </div>
 
-        <div className="lg:pl-5 pl-0 flex lg:items-start items-center justify-center lg:justify-start ">
+        <div className="lg:pl-5 pl-0 flex lg:items-start items-center justify-center lg:justify-start mb-11">
           {" "}
           {this.RenderTabs()}
         </div>
