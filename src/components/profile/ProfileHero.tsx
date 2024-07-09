@@ -6,10 +6,147 @@ import { PlusIcon, LoveIcon, PlayIcon, FavIcon } from "@/assets/icons";
 import UserImg from "@/assets/images/user.jpg";
 import Image from "next/image";
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
+import { RecentWatchedMovies } from "@/types";
 interface ProfileHeroProps {
   planType: SubscriptionEnum;
 }
+
+
 export class ProfileHero extends React.Component<{}, ProfileHeroProps> {
+  private RecentWatchedMovie: RecentWatchedMovies = [
+    {
+      id: 1,
+      movieTitle: "Into the Abyss",
+      movieLikeCount: `${21}k`,
+      movieSummary:
+        "A thrilling adventure unfolds as explorers delve deep into an unknown abyss, facing perilous challenges and discovering ancient secrets.",
+      trailerLink: "https://youtube.com/teams/",
+      isSeasonal: true,
+      isTrailer: true,
+      isLive: true,
+      movieDuration: "2h 30m",
+      moviePoster:
+        "https://cinewaves.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fspider.4490e5f5.jpg&w=3840&q=75",
+      movieGenre: "Adventure, Mystery, Fantasy",
+      isLike: false,
+    },
+    {
+      id: 2,
+      movieTitle: "Echoes of Destiny",
+      movieLikeCount: `${41}k`,
+      movieSummary:
+        "In a world where destinies intertwine, characters navigate love, betrayal, and redemption in a quest for truth and justice.",
+      trailerLink: "https://youtube.com/teams/",
+      isSeasonal: true,
+      isTrailer: true,
+      isLive: true,
+      movieDuration: "2h 30m",
+      moviePoster:
+        "https://cinewaves.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fflash.17d04f92.jpeg&w=3840&q=75",
+      movieGenre: "Drama, Romance, Action",
+      isLike: true,
+    },
+    {
+      id: 3,
+      movieTitle: "Secrets of the Cosmos",
+      movieLikeCount: `${100}k`,
+      movieSummary:
+        "As the universe unfolds, ancient mysteries and cosmic wonders await those who dare to uncover the secrets hidden among the stars.",
+      trailerLink: "https://youtube.com/teams/",
+      isSeasonal: true,
+      isTrailer: true,
+      isLive: true,
+      movieDuration: "2h 30m",
+      moviePoster:
+        "https://cinewaves.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmarvels.2d0280cd.jpg&w=3840&q=75",
+      movieGenre: "Sci-Fi, Mystery, Adventure",
+      isLike: false,
+    },
+    {
+      id: 4,
+      movieTitle: "Legends of the Sky",
+      movieLikeCount: `${1}m`,
+      movieSummary:
+        "In a world where legends take flight, heroes rise against darkness, forging a path of courage and sacrifice in the face of impossible odds.",
+      trailerLink: "https://youtube.com/teams/",
+      isSeasonal: true,
+      isTrailer: true,
+      isLive: true,
+      movieDuration: "2h 30m",
+      moviePoster:
+        "https://cinewaves.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flord.1d5b0220.jpg&w=3840&q=75",
+      movieGenre: "Fantasy, Adventure, Action",
+      isLike: false,
+    },
+  ];
+
+  private LikedMovies: RecentWatchedMovies = [
+    {
+      id: 4,
+      movieTitle: "Legends of the Sky",
+      movieLikeCount: `${1}m`,
+      movieSummary:
+        "In a world where legends take flight, heroes rise against darkness, forging a path of courage and sacrifice in the face of impossible odds.",
+      trailerLink: "https://youtube.com/teams/",
+      isSeasonal: true,
+      isTrailer: true,
+      isLive: true,
+      movieDuration: "2h 30m",
+      moviePoster:
+        "https://cinewaves.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flord.1d5b0220.jpg&w=3840&q=75",
+      movieGenre: "Fantasy, Adventure, Action",
+      isLike: true,
+    },
+    {
+      id: 2,
+      movieTitle: "Echoes of Destiny",
+      movieLikeCount: `${41}k`,
+      movieSummary:
+        "In a world where destinies intertwine, characters navigate love, betrayal, and redemption in a quest for truth and justice.",
+      trailerLink: "https://youtube.com/teams/",
+      isSeasonal: true,
+      isTrailer: true,
+      isLive: true,
+      movieDuration: "2h 30m",
+      moviePoster:
+        "https://cinewaves.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fflash.17d04f92.jpeg&w=3840&q=75",
+      movieGenre: "Drama, Romance, Action",
+      isLike: true,
+    },
+    {
+      id: 3,
+      movieTitle: "Secrets of the Cosmos",
+      movieLikeCount: `${100}k`,
+      movieSummary:
+        "As the universe unfolds, ancient mysteries and cosmic wonders await those who dare to uncover the secrets hidden among the stars.",
+      trailerLink: "https://youtube.com/teams/",
+      isSeasonal: true,
+      isTrailer: true,
+      isLive: true,
+      movieDuration: "2h 30m",
+      moviePoster:
+        "https://cinewaves.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmarvels.2d0280cd.jpg&w=3840&q=75",
+      movieGenre: "Sci-Fi, Mystery, Adventure",
+      isLike: true,
+    },
+    {
+      id: 1,
+      movieTitle: "Into the Abyss",
+      movieLikeCount: `${21}k`,
+      movieSummary:
+        "A thrilling adventure unfolds as explorers delve deep into an unknown abyss, facing perilous challenges and discovering ancient secrets.",
+      trailerLink: "https://youtube.com/teams/",
+      isSeasonal: true,
+      isTrailer: true,
+      isLive: true,
+      movieDuration: "2h 30m",
+      moviePoster:
+        "https://cinewaves.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fspider.4490e5f5.jpg&w=3840&q=75",
+      movieGenre: "Adventure, Mystery, Fantasy",
+      isLike: true,
+    },
+  ];
+
   constructor(props: {}) {
     super(props);
     this.state = { planType: SubscriptionEnum.BASIC }; // Directly assign the enum value here
@@ -118,72 +255,92 @@ export class ProfileHero extends React.Component<{}, ProfileHeroProps> {
       <div>
         <TabPanel>
           <div>
-            <div className="">
-              <div className="relative h-auto w-[350px] bg-[#292929] rounded-lg p-[2px]">
-                <div className="">
-                  <div className="absolute flex text-center flex-col top-2  left-2">
-                    <div className="rounded-full p-[8px] cursor-pointer flex item-center justify-center bg-black w-fit ">
-                      <LoveIcon
-                        height={20}
-                        width={20}
-                        color=""
-                        fill="#3EE783"
-                      />
-                    </div>
-                    <span>21k</span>
-                  </div>
-                  <img
-                    alt="hello"
-                    src={
-                      "https://cinewaves.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fspider.4490e5f5.jpg&w=3840&q=75"
-                    }
-                    height={200}
-                    width={200}
-                    className="object-cover rounded-md w-[auto] h-[233px]"
-                    loading="lazy"
-                  />
-                </div>
-
-                <div className="pl-1">
-                  <div>
-                    <h1 className="font-bold text-2xl pt-2 ">The Hunter</h1>
-                    <p className="text-sm text-[#545453] ">
-                      PG-13 2hr 49min . Adventure, Drama, Sci-Fi
-                    </p>
-                  </div>
-                  <div>
-                    <span className=" font-medium text-sm mb-2 ">Summary</span>
-                    <p className="text-[13px] text-[#545453]  w-full">
-                      {" "}
-                      Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                      Odit natus esse illo, obcaecati voluptatum doloribus quos
-                    </p>
-                  </div>
-                  <div className="w-full flex justify-between items-center my-3">
-                    <div>
-                      <button className="flex items-center text-center border-2 border-[#3EE783] px-2 rounded-sm">
-                        <PlayIcon
-                          height={20}
-                          width={20}
-                          color=""
-                          className="border-none"
-                          fill="#3EE783"
+            <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1  gap-3  lg:pr-4 pl-0">
+              {this.RecentWatchedMovie?.map(
+                ({
+                  id,
+                  movieLikeCount,
+                  moviePoster,
+                  movieTitle,
+                  movieSummary,
+                  isLike,
+                  movieGenre,
+                }) => {
+                  return (
+                    <div
+                      className="relative h-auto w-full bg-[#292929] rounded-lg p-[2px]"
+                      key={id}
+                    >
+                      <div className="">
+                        <div className="absolute flex text-center flex-col top-2  left-2">
+                          <div className="rounded-full p-[8px] cursor-pointer flex item-center justify-center bg-gray-600/50 w-fit ">
+                            <LoveIcon
+                              height={20}
+                              width={20}
+                              color=""
+                              fill={isLike ? "#3EE783" : "#ffff"}
+                            />
+                          </div>
+                          <span>{movieLikeCount}</span>
+                        </div>
+                        <img
+                          alt="hello"
+                          src={moviePoster}
+                          height={200}
+                          width={200}
+                          className="object-cover rounded-md w-full h-[233px]"
+                          loading="lazy"
                         />
-                        <p className="text-[#3EE783] text-sm">Watch Trailer</p>
-                      </button>
+                      </div>
+
+                      <div className="px-2">
+                        <div>
+                          <h1 className="font-bold text-2xl pt-2 ">
+                            {movieTitle}
+                          </h1>
+                          <p className="text-sm text-[#545453] ">
+                            PG-13 2hr 49min . {movieGenre}
+                          </p>
+                        </div>
+                        <div>
+                          <span className=" font-medium text-sm mb-2 ">
+                            Summary
+                          </span>
+                          <p className="text-[13px] text-[#545453]  w-full">
+                            {" "}
+                            {movieSummary}
+                          </p>
+                        </div>
+                        <div className="w-full flex justify-between items-center my-3">
+                          <div>
+                            <button className="flex items-center text-center border-2 border-[#3EE783] px-2 rounded-sm">
+                              <PlayIcon
+                                height={20}
+                                width={20}
+                                color=""
+                                className="border-none"
+                                fill="#3EE783"
+                              />
+                              <p className="text-[#3EE783] text-sm">
+                                Watch Trailer
+                              </p>
+                            </button>
+                          </div>
+                          <div className="pr-3">
+                            <FavIcon
+                              height={25}
+                              width={25}
+                              color=""
+                              className="border-none cursor-pointer"
+                              fill="#3EE783"
+                            />
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <div className="pr-3">
-                      <FavIcon
-                        height={25}
-                        width={25}
-                        color=""
-                        className="border-none cursor-pointer"
-                        fill="#3EE783"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
+                  );
+                }
+              )}
             </div>
           </div>
         </TabPanel>
@@ -194,7 +351,97 @@ export class ProfileHero extends React.Component<{}, ProfileHeroProps> {
   private RenderLiked() {
     return (
       <div>
-        <TabPanel>Content 2</TabPanel>
+        <TabPanel>
+          <div>
+            <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1  gap-3  lg:pr-4 pl-0">
+              {this.LikedMovies?.map(
+                ({
+                  id,
+                  movieLikeCount,
+                  moviePoster,
+                  movieTitle,
+                  movieSummary,
+                  isLike,
+                  movieGenre,
+                }) => {
+                  return (
+                    <div
+                      className="relative h-auto w-full bg-[#292929] rounded-lg p-[2px]"
+                      key={id}
+                    >
+                      <div className="">
+                        <div className="absolute flex text-center flex-col top-2  left-2">
+                          <div className="rounded-full p-[8px] cursor-pointer flex item-center justify-center bg-gray-600/50 w-fit ">
+                            <LoveIcon
+                              height={20}
+                              width={20}
+                              color=""
+                              fill={isLike ? "#3EE783" : "#ffff"}
+                            />
+                          </div>
+                          <span>{movieLikeCount}</span>
+                        </div>
+                        <img
+                          alt="hello"
+                          src={moviePoster}
+                          height={200}
+                          width={200}
+                          className="object-cover rounded-md w-full h-[233px]"
+                          loading="lazy"
+                        />
+                      </div>
+
+                      <div className="px-2">
+                        <div>
+                          <h1 className="font-bold text-2xl pt-2 ">
+                            {movieTitle}
+                          </h1>
+                          <p className="text-sm text-[#545453] ">
+                            PG-13 2hr 49min . {movieGenre}
+                          </p>
+                        </div>
+                        <div>
+                          <span className=" font-medium text-sm mb-2 ">
+                            Summary
+                          </span>
+                          <p className="text-[13px] text-[#545453]  w-full">
+                            {" "}
+                            {movieSummary}
+                          </p>
+                        </div>
+                        <div className="w-full flex justify-between items-center my-3">
+                          <div>
+                            <button className="flex items-center text-center border-2 border-[#3EE783] px-2 rounded-sm">
+                              <PlayIcon
+                                height={20}
+                                width={20}
+                                color=""
+                                className="border-none"
+                                fill="#3EE783"
+                              />
+                              <p className="text-[#3EE783] text-sm">
+                                Watch Trailer
+                              </p>
+                            </button>
+                          </div>
+                          <div className="pr-3">
+                            <FavIcon
+                              height={25}
+                              width={25}
+                              color=""
+                              className="border-none cursor-pointer"
+                              fill="#3EE783"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                }
+              )}
+            </div>
+          </div>
+        </TabPanel>
       </div>
     );
   }
@@ -217,7 +464,6 @@ export class ProfileHero extends React.Component<{}, ProfileHeroProps> {
   private RenderTabs() {
     return (
       <TabGroup>
-        
         {this.TabHead()}
         <TabPanels className=" px-4 lg:px-0 mb-7">
           {this.Recentlywatched()}
@@ -236,9 +482,8 @@ export class ProfileHero extends React.Component<{}, ProfileHeroProps> {
           <div>{this.Option()}</div>
         </div>
 
-        <div className="lg:pl-28 pl-0 flex lg:items-start items-center justify-center lg:justify-start ">
+        <div className="lg:pl-5 pl-0 flex lg:items-start items-center justify-center lg:justify-start ">
           {" "}
-          
           {this.RenderTabs()}
         </div>
       </div>
