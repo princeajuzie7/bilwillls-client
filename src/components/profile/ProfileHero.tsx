@@ -7,12 +7,19 @@ import UserImg from "@/assets/images/user.jpg";
 import Image from "next/image";
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
 import { RecentWatchedMovies } from "@/types";
+import useSelector from "react-redux";
+import ProfileHoc from "@/helper/ProfileHoc";
+import { selectUser, selectLoading } from "@/selectors/AuthSelectors";
+
 interface ProfileHeroProps {
   planType: SubscriptionEnum;
+  user: ReturnType<typeof selectUser>;
+  isLoading: ReturnType<typeof selectLoading>;
 }
-
-
-export class ProfileHero extends React.Component<{}, ProfileHeroProps> {
+interface ProfileHeroState {
+  planType: SubscriptionEnum;
+}
+export class ProfileHero extends React.Component<ProfileHeroProps, ProfileHeroState> {
   private RecentWatchedMovie: RecentWatchedMovies = [
     {
       id: 1,
@@ -147,9 +154,11 @@ export class ProfileHero extends React.Component<{}, ProfileHeroProps> {
     },
   ];
 
-  constructor(props: {}) {
+  constructor(props: ProfileHeroProps) {
     super(props);
-    this.state = { planType: SubscriptionEnum.PREMIUM }; // Directly assign the enum value here
+
+    this.state = { planType: props.planType };
+    // console.log(this.state, "plan type");
   }
 
   private async UpdatePlanOption(newplanoption: SubscriptionEnum) {
@@ -199,25 +208,41 @@ export class ProfileHero extends React.Component<{}, ProfileHeroProps> {
     );
   }
   private User() {
+    //  const user = useSelector(selectUser);
+    //  const isloading = useSelector(selectLoading);
+    const { user, isLoading } = this.props;
     return (
       <div className="flex items-center justify-center flex-col gap-3">
-        <div className="relative">
-          <div>
-            <PlusIcon
-              height={25}
-              width={25}
-              color="#fff"
-              className="absolute bottom-[-7px]  p-1 rounded-full bg-[#191919] border-[3px] border-black cursor-pointer right-[-7px]"
-            />
-          </div>
-          <Image
-            src={UserImg}
-            alt="user"
-            width={200}
-            height={200}
-            className=" h-[149px] object-cover rounded-md w-[156px]"
-          />
-        </div>
+        {isLoading ? (
+          <div className=" h-[149px] object-cover rounded-md w-[156px]"></div>
+        ) : (
+          user && user?.userdp && (
+            <div className="relative">
+              <div>
+                <PlusIcon
+                  height={25}
+                  width={25}
+                  color="#fff"
+                  className="absolute bottom-[-7px]  p-1 rounded-full bg-[#191919] border-[3px] border-black cursor-pointer right-[-7px]"
+                />
+              </div>
+              <Image
+                src={user.userdp}
+                alt={""}
+                width={200}
+                height={200}
+                className=" h-[149px] object-cover rounded-md w-[156px]"
+              />
+            </div>
+          )
+        )}
+        {/* {isloading ? (
+          <div className=" h-[149px] object-cover rounded-md w-[156px]"></div>
+        ) : (
+          user && ( */}
+
+        {/* )
+        )} */}
         <div className="text-center ">
           <h2 className=" font-bold text-2xl ">Mark Poul</h2>
           <span className="text-[#545453] text-base ">@markpaul01</span>
@@ -462,6 +487,8 @@ export class ProfileHero extends React.Component<{}, ProfileHeroProps> {
   }
 
   private RenderTabs() {
+    //  const { user, isLoading } = this.props;
+    //  console.log(user, isLoading, "user in class");
     return (
       <TabGroup>
         {this.TabHead()}
@@ -482,7 +509,7 @@ export class ProfileHero extends React.Component<{}, ProfileHeroProps> {
           <div>{this.Option()}</div>
         </div>
 
-        <div className="lg:pl-5 pl-0 flex lg:items-start items-center justify-center lg:justify-start mb-11">
+        <div className="lg:pl-16  lg:pr-14 pl-0 flex lg:items-start items-center justify-center lg:justify-start mb-11">
           {" "}
           {this.RenderTabs()}
         </div>

@@ -4,7 +4,7 @@ export interface AuthInterface {
   readonly password?: string;
   confirmpassword?: string;
   token?: string | null;
-  userdp?: string,
+  userdp?: string | undefined,
 }
 
 export interface RegexInterface {

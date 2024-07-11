@@ -4,13 +4,17 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Logo from "@/resources/svg/logo.svg";
 import UserImg from "@/assets/images/user.jpg";
+import { useSelector } from 'react-redux';
+import { selectLoading, selectUser } from '@/selectors/AuthSelectors';
 export function Navbar() {
-  
+  const user = useSelector(selectUser)
+  const isloading = useSelector(selectLoading)
     const [isSticky, setIsSticky] = React.useState(false);
 
 
 
     React.useEffect(() => {
+    console.log('user', user)
       function handleScroll() {
         const scroll = window.scrollY;
         setIsSticky(scroll >= 100);
@@ -149,15 +153,26 @@ export function Navbar() {
                 </svg>
               </div>
             </div>
-            <Link href={'/app/dashboard/profile'}>
+            <Link href={"/app/dashboard/profile"}>
+              
+              
+              { isloading ?
+           
+                  <div className="inline-block size-8 rounded object-cover cursor-pointer bg-gray-500/15 animate-pulse" ></div>
+               :
+          
+                  user?.userdp && (
+                    <Image
+                      src={user?.userdp}
+                      height={200}
+                      width={200}
+                      alt={"hello world"}
+                      className="inline-block size-8 rounded object-cover cursor-pointer"
+                    />
+              )
+              
             
-            <Image
-              src={UserImg}
-              height={200}
-              width={200}
-              alt="user image"
-              className="inline-block size-8 rounded object-cover cursor-pointer"
-            />
+              }
             </Link>
             {/* <img
          

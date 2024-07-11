@@ -102,7 +102,7 @@ export class AuthServices extends React.Component {
     const response = await apiResponse.get("user/getactiveuser", {
       withCredentials: true,
     });
-    return response.data;
+    return response.data?.user;
   }
 
   static async ForgotPassword(
