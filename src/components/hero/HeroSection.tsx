@@ -56,21 +56,19 @@ export function HeroSection() {
    
 
             <div className="relative pb-[3.4375rem]">
-              {typeof window !== "undefined" ?
-              
               <Swiper
                 slidesPerView={2}
                 modules={[Navigation]}
-                onSwiper={(swiper) => {
-                  firstSwiperRef.current = swiper;
-                  console.log("First Swiper initialized", swiper);
-                }}
-                effect={"fade"}
-                loop={true}
-                navigation={{
-                  prevEl: ".slider-prev",
-                  nextEl: ".slider-next",
-                }}
+                // onSwiper={(swiper) => {
+                //   firstSwiperRef.current = swiper;
+                //   console.log("First Swiper initialized", swiper);
+                // }}
+                // effect={"fade"}
+                // loop={true}
+                // navigation={{
+                //   prevEl: ".slider-prev",
+                //   nextEl: ".slider-next",
+                // }}
                 onSlideChange={handleSlideChangeFirst}
               >
                 {slides.map((slide, index) => (
@@ -96,10 +94,7 @@ export function HeroSection() {
                   </SwiperSlide>
                 ))}
                 </Swiper>
-                :
-                <></>
-            }
-
+         
               <div className="slider-prev swiper-button">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
