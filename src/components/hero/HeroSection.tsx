@@ -56,6 +56,8 @@ export function HeroSection() {
    
 
             <div className="relative pb-[3.4375rem]">
+              {typeof window !== "undefined" ?
+              
               <Swiper
                 slidesPerView={2}
                 modules={[Navigation]}
@@ -83,6 +85,7 @@ export function HeroSection() {
                         <div className="absolute bottom-4 top-auto right-0 left-4">
                           <h6 className="font-[500] mb-0 text-[16px] text-white">
                             {slide.title}
+                            
                           </h6>
                           <span className="inline-block text-[.75rem] text-white">
                             {slide.duration}
@@ -92,7 +95,10 @@ export function HeroSection() {
                     </div>
                   </SwiperSlide>
                 ))}
-              </Swiper>
+                </Swiper>
+                :
+                <></>
+            }
 
               <div className="slider-prev swiper-button">
                 <svg
