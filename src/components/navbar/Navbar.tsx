@@ -28,7 +28,7 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed w-full top-0 z-50f py-2 ${
+      className={`fixed w-full top-0 z-50 py-2 ${
         isSticky ? "shadow-custom animate-sticky bg-black/25 py-1" : ""
       }`}
       style={{

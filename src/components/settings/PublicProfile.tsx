@@ -3,7 +3,7 @@ import React from 'react'
 export  function PublicProfile() {
   return (
     <>
-      <main className="w-full min-h-screen py-1 overflow-y-scroll">
+      <main className="w-full py-1 h-full  ">
         <div className="p-2 md:p-4">
           <div className="w-full px-6 pb-8 mt-8 sm:max-w-xl sm:rounded-lg">
             <h2 className="pl-6 text-2xl font-bold sm:text-xl">
@@ -68,6 +68,21 @@ export  function PublicProfile() {
                 </div>
                 <div className="mb-2 sm:mb-6">
                   <label
+                    htmlFor="profession"
+                    className="block mb-2 text-sm font-medium text-indigo-900 dark:text-white"
+                  >
+                    Username
+                  </label>
+                  <input
+                    type="text"
+                    id="profession"
+                    className="bg-indigo-50 border border-indigo-300 text-indigo-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5 "
+                    placeholder="your username"
+                    required
+                  />
+                </div>
+                <div className="mb-2 sm:mb-6">
+                  <label
                     htmlFor="email"
                     className="block mb-2 text-sm font-medium text-indigo-900 dark:text-white"
                   >
@@ -81,21 +96,7 @@ export  function PublicProfile() {
                     required
                   />
                 </div>
-                <div className="mb-2 sm:mb-6">
-                  <label
-                    htmlFor="profession"
-                    className="block mb-2 text-sm font-medium text-indigo-900 dark:text-white"
-                  >
-                    Profession
-                  </label>
-                  <input
-                    type="text"
-                    id="profession"
-                    className="bg-indigo-50 border border-indigo-300 text-indigo-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5 "
-                    placeholder="your profession"
-                    required
-                  />
-                </div>
+
                 <div className="mb-6">
                   <label
                     htmlFor="message"
