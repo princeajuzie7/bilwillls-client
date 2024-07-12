@@ -36,7 +36,7 @@ input[type='checkbox'] {
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #ffff;
+  background-color: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
