@@ -8,7 +8,7 @@ import "@/app/styles/topmovie.css";
 import "@/app/styles/Footer.css";
 import "@/app/font/googlefont.css";
 import "@/app/styles/top10series.css";
-import { PrelineScript } from "@/lib";
+// import { PrelineScript } from "@/lib";
 import { TanstackProvider } from "@/lib"
 import StoreProvider from "@/store/StoreProvider";
 
@@ -27,7 +27,7 @@ export default function RootLayout({
       <body>
         <StoreProvider>
           <TanstackProvider>
-            <PrelineScript />
+          
             <div vaul-drawer-wrapper="">{children}</div>
           </TanstackProvider>
         </StoreProvider>
