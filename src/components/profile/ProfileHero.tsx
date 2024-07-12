@@ -2,13 +2,13 @@
 import React from "react";
 import LiveIsland from "react-live-island";
 import { SubscriptionEnum } from "@/enum";
-import { PlusIcon, LoveIcon, PlayIcon, FavIcon } from "@/assets/icons";
+import { PlusIcon, LoveIcon, PlayIcon, FavIcon, SettingsIcon } from "@/assets/icons";
 import UserImg from "@/assets/images/user.jpg";
 import Image from "next/image";
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
 import { RecentWatchedMovies } from "@/types";
 import { selectUser, selectLoading } from "@/selectors/AuthSelectors";
-import { EditProfile } from "./EditProfile";
+import { EditProfile } from "./Settings";
 import { CustomDialogTypes } from "@/types/CustomTypes";
 import { Drawer } from "vaul";
 
@@ -245,7 +245,7 @@ export class ProfileHero extends React.Component<
                 alt={user.username}
                 width={200}
                 height={200}
-                className=" h-[149px] object-cover rounded-md w-[156px]"
+                className=" h-[129px] object-cover rounded-md w-[136px]"
               />
             </div>
           )
@@ -289,12 +289,12 @@ export class ProfileHero extends React.Component<
             <span className="text-[#545453] text-sm">Liked Movies</span>
           </div>
         </div>
-<Drawer.Trigger asChild>
-
-        <div className="w-full bg-[#191919] px-4 py-2 text-center rounded-lg cursor-pointer" >
-          <span className="text-[#545453]">Edit Profile</span>
-        </div>
-</Drawer.Trigger>
+        <Drawer.Trigger asChild>
+          <div className="w-full bg-[#191919] px-4 py-2 text-center rounded-lg cursor-pointer flex items-center justify-center gap-1">
+            <span className="text-[#545453]">Settings</span>
+            <SettingsIcon color="#545453" height={20} width={20} />
+          </div>
+        </Drawer.Trigger>
 
       </div>
     );
