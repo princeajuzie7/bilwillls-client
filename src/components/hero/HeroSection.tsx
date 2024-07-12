@@ -51,7 +51,7 @@ export function HeroSection() {
   return (
     <div>
       <div className="relative flex  justify-end  lg:h-screen h-[32.125rem;]">
-        <div className="relative my-auto hidden lg:block">
+        <div className="relative my-auto block">
           <div className=" custom-hero-bg w-[38em] relative mt-[74px]  pt-9 pb-9 pl-9 pr-0 right-0 z-10 ">
    
 
@@ -59,16 +59,16 @@ export function HeroSection() {
               <Swiper
                 slidesPerView={2}
                 modules={[Navigation]}
-                // onSwiper={(swiper) => {
-                //   firstSwiperRef.current = swiper;
-                //   console.log("First Swiper initialized", swiper);
-                // }}
-                // effect={"fade"}
-                // loop={true}
-                // navigation={{
-                //   prevEl: ".slider-prev",
-                //   nextEl: ".slider-next",
-                // }}
+                onSwiper={(swiper) => {
+                  firstSwiperRef.current = swiper;
+                  console.log("First Swiper initialized", swiper);
+                }}
+                effect={"fade"}
+                loop={true}
+                navigation={{
+                  prevEl: ".slider-prev",
+                  nextEl: ".slider-next",
+                }}
                 onSlideChange={handleSlideChangeFirst}
               >
                 {slides.map((slide, index) => (
@@ -83,7 +83,6 @@ export function HeroSection() {
                         <div className="absolute bottom-4 top-auto right-0 left-4">
                           <h6 className="font-[500] mb-0 text-[16px] text-white">
                             {slide.title}
-                            
                           </h6>
                           <span className="inline-block text-[.75rem] text-white">
                             {slide.duration}
@@ -93,8 +92,8 @@ export function HeroSection() {
                     </div>
                   </SwiperSlide>
                 ))}
-                </Swiper>
-         
+              </Swiper>
+
               <div className="slider-prev swiper-button">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
