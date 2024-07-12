@@ -7,19 +7,30 @@ import UserImg from "@/assets/images/user.jpg";
 import Image from "next/image";
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
 import { RecentWatchedMovies } from "@/types";
-import useSelector from "react-redux";
-import ProfileHoc from "@/helper/ProfileHoc";
 import { selectUser, selectLoading } from "@/selectors/AuthSelectors";
+import { EditProfile } from "./EditProfile";
+import { CustomDialogTypes } from "@/types/CustomTypes";
+import { Drawer } from "vaul";
 
 interface ProfileHeroProps {
   planType: SubscriptionEnum;
   user: ReturnType<typeof selectUser>;
   isLoading: ReturnType<typeof selectLoading>;
+  isOpen: boolean;
+  setIsOpen:  (value : boolean)=> void;
 }
+
+type NewProfile = Omit<CustomDialogTypes, "children" | "title">
+
+
 interface ProfileHeroState {
   planType: SubscriptionEnum;
 }
-export class ProfileHero extends React.Component<ProfileHeroProps, ProfileHeroState> {
+export class ProfileHero extends React.Component<
+  ProfileHeroProps,
+  ProfileHeroState,
+  NewProfile
+> {
   private RecentWatchedMovie: RecentWatchedMovies = [
     {
       id: 1,
@@ -158,6 +169,7 @@ export class ProfileHero extends React.Component<ProfileHeroProps, ProfileHeroSt
     super(props);
 
     this.state = { planType: props.planType };
+
     // console.log(this.state, "plan type");
   }
 
@@ -184,8 +196,8 @@ export class ProfileHero extends React.Component<ProfileHeroProps, ProfileHeroSt
     return (
       <div>
         <LiveIsland
-          className="px-2.5 py-1 sticky "
-          wrapperClassName=""
+          className="px-2.5 py-1 sticky"
+          wrapperClassName=" !z-10"
           initialAnimation={false}
           largeClassName=" pl-[20px]"
           triggerType="hover"
@@ -214,9 +226,11 @@ export class ProfileHero extends React.Component<ProfileHeroProps, ProfileHeroSt
     return (
       <div className="flex items-center justify-center flex-col gap-3">
         {isLoading ? (
-          <div className=" h-[149px] object-cover rounded-md w-[156px]"></div>
+          <div className=" h-[149px] object-cover rounded-md w-[156px] bg-gray-300/30 animate-pulse"></div>
         ) : (
-          user && user?.userdp && (
+          user &&
+          user?.userdp &&
+          user?.username && (
             <div className="relative">
               <div>
                 <PlusIcon
@@ -228,7 +242,7 @@ export class ProfileHero extends React.Component<ProfileHeroProps, ProfileHeroSt
               </div>
               <Image
                 src={user.userdp}
-                alt={""}
+                alt={user.username}
                 width={200}
                 height={200}
                 className=" h-[149px] object-cover rounded-md w-[156px]"
@@ -245,13 +259,20 @@ export class ProfileHero extends React.Component<ProfileHeroProps, ProfileHeroSt
         )} */}
         <div className="text-center ">
           <h2 className=" font-bold text-2xl ">Mark Poul</h2>
-          <span className="text-[#545453] text-base ">@markpaul01</span>
+          {isLoading ? (
+            <div className=" w-24  bg-gray-600/30 animate-pulse h-5 "></div> &&
+            user &&
+            user?.username
+          ) : (
+            <span className="text-[#545453] text-base ">@{user?.username}</span>
+          )}
         </div>
       </div>
     );
   }
 
   private Option() {
+    const { isOpen, setIsOpen } = this.props;
     return (
       <div className="flex flex-col gap-4">
         <div className="flex  items-center gap-2">
@@ -268,9 +289,13 @@ export class ProfileHero extends React.Component<ProfileHeroProps, ProfileHeroSt
             <span className="text-[#545453] text-sm">Liked Movies</span>
           </div>
         </div>
-        <div className="w-full bg-[#191919] px-4 py-2 text-center rounded-lg cursor-pointer">
+<Drawer.Trigger asChild>
+
+        <div className="w-full bg-[#191919] px-4 py-2 text-center rounded-lg cursor-pointer" >
           <span className="text-[#545453]">Edit Profile</span>
         </div>
+</Drawer.Trigger>
+
       </div>
     );
   }
@@ -500,7 +525,10 @@ export class ProfileHero extends React.Component<ProfileHeroProps, ProfileHeroSt
     );
   }
   render(): React.ReactNode {
+        const { isOpen, setIsOpen } = this.props;
     return (
+        <Drawer.Root shouldScaleBackground>
+        
       <div className="flex flex-col gap-5">
         <div className="w-full mt-32 flex flex-col gap-2 items-center justify-center h-auto lg:px-0 px-5">
           <div>{this.Plan()}</div>
@@ -513,7 +541,10 @@ export class ProfileHero extends React.Component<ProfileHeroProps, ProfileHeroSt
           {" "}
           {this.RenderTabs()}
         </div>
+     
       </div>
+      <EditProfile />
+        </Drawer.Root>
     );
   }
 }

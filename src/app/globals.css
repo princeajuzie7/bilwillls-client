@@ -53,3 +53,8 @@ input[type='checkbox'] {
 .live-island-camera{
   display: none;
 }
+
+.live-island-wrapper {
+  z-index:  10px !important;
+
+}
