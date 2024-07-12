@@ -28,9 +28,9 @@ export default function RootLayout({
         <StoreProvider>
           <TanstackProvider>
             <PrelineScript />
-            {children}
+            <div vaul-drawer-wrapper="">{children}</div>
           </TanstackProvider>
-       </StoreProvider>
+        </StoreProvider>
       </body>
     </html>
   );

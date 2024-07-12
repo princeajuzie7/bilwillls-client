@@ -527,24 +527,22 @@ export class ProfileHero extends React.Component<
   render(): React.ReactNode {
         const { isOpen, setIsOpen } = this.props;
     return (
-        <Drawer.Root shouldScaleBackground>
-        
-      <div className="flex flex-col gap-5">
-        <div className="w-full mt-32 flex flex-col gap-2 items-center justify-center h-auto lg:px-0 px-5">
-          <div>{this.Plan()}</div>
-          <div>{this.User()}</div>
+      <Drawer.Root shouldScaleBackground>
+        <div className="flex flex-col gap-5">
+          <div className="w-full mt-32 flex flex-col gap-2 items-center justify-center h-auto lg:px-0 px-5">
+            <div>{this.Plan()}</div>
+            <div>{this.User()}</div>
 
-          <div>{this.Option()}</div>
-        </div>
+            <div>{this.Option()}</div>
+          </div>
 
-        <div className="lg:pl-16  lg:pr-14 pl-0 flex lg:items-start items-center justify-center lg:justify-start mb-11">
-          {" "}
-          {this.RenderTabs()}
+          <div className="lg:pl-16  lg:pr-14 pl-0 flex lg:items-start items-center justify-center lg:justify-start mb-11">
+            {" "}
+            {this.RenderTabs()}
+          </div>
         </div>
-     
-      </div>
-      <EditProfile />
-        </Drawer.Root>
+        <EditProfile />
+      </Drawer.Root>
     );
   }
 }
