@@ -2,6 +2,7 @@ import axios from "axios"
 
 
 export const apiResponse = axios.create({
+  withCredentials: true,
   baseURL:
     process.env.NODE_ENV === "production"
       ? process.env.NEXT_PUBLIC_LIVE_URL
@@ -11,6 +12,8 @@ export const apiResponse = axios.create({
     Accept: "application/json",
     // "Authorization" : "Bearer"
   },
+  
 });
 
+apiResponse.defaults.withCredentials = true
 export default apiResponse; 
