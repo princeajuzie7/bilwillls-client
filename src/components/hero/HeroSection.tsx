@@ -50,7 +50,7 @@ export function HeroSection() {
 
   return (
     <div>
-      <div className="relative flex  justify-end  lg:h-screen h-[32.125rem;]">
+      <div className="relative flex  justify-end  lg:h-screen h-[32.125rem;] !px-0 w-full">
         <div className="relative my-auto block lg:block md:hidden sm:hidden smaller-than-sm:hidden">
           <div className=" custom-hero-bg w-[38em] relative mt-[74px]  pt-9 pb-9 pl-9 pr-0 right-0 z-10 ">
    
@@ -143,6 +143,7 @@ export function HeroSection() {
               console.log("Second Swiper initialized", swiper);
             }}
             loop={true}
+     
             navigation={{
               prevEl: ".slider-prev",
               nextEl: ".slider-next",
@@ -150,7 +151,7 @@ export function HeroSection() {
             onSlideChange={handleSlideChangeSecond}
           >
             {slides.map((slide, index) => (
-              <SwiperSlide key={index}>
+              <SwiperSlide key={index} className="swiper-slide2"> 
                 <div className="w-full h-full overflow-hidden rounded slider--image ">
                   <img
                     src={slide.img}

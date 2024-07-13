@@ -1,5 +1,9 @@
 /* hero section style  */
 
+.swiper-slide2{
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
 .custom-hero-bg {
   background: linear-gradient(
     -270deg,

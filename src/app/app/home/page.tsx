@@ -15,11 +15,11 @@ export default function Page() {
   console.log("user:",user)
   return (
     <div >
-      <div>
+      <div >
 
       <HeroSection />
       </div>
-      <div>
+      <div >
         <ContinueWatching />
       </div>
       <div className="">
